@@ -44,6 +44,7 @@ extension AppDelegate {
         AppRunManager.shared.initData()
     }
     
+    
     private func setupIQ() {
         IQKeyboardManager.shared.isEnabled = true
         IQKeyboardManager.shared.resignOnTouchOutside = true
