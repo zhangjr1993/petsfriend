@@ -1,4 +1,5 @@
 PODS:
+  - Flutter (1.0.0)
   - IQKeyboardCore (1.0.5)
   - IQKeyboardManagerSwift (8.0.1):
     - IQKeyboardManagerSwift/Appearance (= 8.0.1)
@@ -69,6 +70,7 @@ PODS:
     - SteviaLayout (= 5.1.2)
 
 DEPENDENCIES:
+  - Flutter (from `Flutter`)
   - IQKeyboardManagerSwift
   - SDWebImage/WebP
   - SmartCodable
@@ -95,7 +97,12 @@ SPEC REPOS:
     - Toast-Swift
     - YPImagePicker
 
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+
 SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   IQKeyboardCore: 28c8bf3bcd8ba5aa1570b318cbc4da94b861711e
   IQKeyboardManagerSwift: 835fc9c6e4732398113406d84900ad2e8f141218
   IQKeyboardNotification: d7382c4466c5a5adef92c7452ebf861b36050088
@@ -113,6 +120,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
   YPImagePicker: afc81b3cffab05a6e7261c5daf80dc31b4e917b4
 
-PODFILE CHECKSUM: 2e2260f7c865acc83de08b4d100e253b1beb07af
+PODFILE CHECKSUM: 78e842a1a7e18807d40ee75a8830f987252e8117
 
 COCOAPODS: 1.16.2

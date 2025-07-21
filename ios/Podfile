@@ -32,7 +32,7 @@ pod 'YPImagePicker'
 pod 'Toast-Swift', '~> 5.1.1'
 pod 'SQLite.swift', '~> 0.15.0'
 
-#flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
 
 
 end
