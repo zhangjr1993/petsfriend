@@ -34,12 +34,12 @@ jobs:
           rm -rf ~/Library/Developer/Xcode/Archives
           rm -rf ~/Library/Developer/Xcode/Products
       # 设置 CocoaPods
-      # - name: Setup CocoaPods
-      #   run: |
-      #     cd ios
-      #     rm -rf Pods
-      #     rm -f Podfile.lock
-      #     pod install --repo-update
+      - name: Setup CocoaPods
+        run: |
+          cd ios
+          rm -rf Pods
+          rm -f Podfile.lock
+          pod install --repo-update
           
 #       添加详细的环境信息调试步骤
       - name: Print Environment Info
