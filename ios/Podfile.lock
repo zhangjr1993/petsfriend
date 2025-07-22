@@ -53,10 +53,12 @@ PODS:
   - libwebp/webp (1.5.0):
     - libwebp/sharpyuv
   - PryntTrimmerView (4.0.2)
-  - SDWebImage/Core (4.4.8)
-  - SDWebImage/WebP (4.4.8):
-    - libwebp (< 2.0, >= 0.5)
-    - SDWebImage/Core
+  - SDWebImage (5.21.1):
+    - SDWebImage/Core (= 5.21.1)
+  - SDWebImage/Core (5.21.1)
+  - SDWebImageWebPCoder (0.14.6):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.17)
   - SmartCodable (5.0.14):
     - SmartCodable/Core (= 5.0.14)
   - SmartCodable/Core (5.0.14)
@@ -72,7 +74,8 @@ PODS:
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - IQKeyboardManagerSwift
-  - SDWebImage/WebP
+  - SDWebImage
+  - SDWebImageWebPCoder
   - SmartCodable
   - SQLite.swift (~> 0.15.0)
   - Toast-Swift (~> 5.1.1)
@@ -91,6 +94,7 @@ SPEC REPOS:
     - libwebp
     - PryntTrimmerView
     - SDWebImage
+    - SDWebImageWebPCoder
     - SmartCodable
     - SQLite.swift
     - SteviaLayout
@@ -113,13 +117,14 @@ SPEC CHECKSUMS:
   IQTextView: ae13b4922f22e6f027f62c557d9f4f236b19d5c7
   libwebp: 02b23773aedb6ff1fd38cec7a77b81414c6842a8
   PryntTrimmerView: 6a43cc90df5d99addeabd33d4ba09b1365322130
-  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
+  SDWebImage: f29024626962457f3470184232766516dee8dfea
+  SDWebImageWebPCoder: e38c0a70396191361d60c092933e22c20d5b1380
   SmartCodable: 384edba3cf436a430b35049962685b08ad3ed5cc
   SQLite.swift: a107c734115fea616a4ad31371d39f1637e8de56
   SteviaLayout: 05424e528d643657d39ce72c786e4adf13cfc5f2
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
   YPImagePicker: afc81b3cffab05a6e7261c5daf80dc31b4e917b4
 
-PODFILE CHECKSUM: 78e842a1a7e18807d40ee75a8830f987252e8117
+PODFILE CHECKSUM: baa7b7a3ff28b10f60862567e8f2b84fcba26932
 
 COCOAPODS: 1.16.2

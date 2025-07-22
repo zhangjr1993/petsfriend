@@ -1,4 +1,6 @@
 import Flutter
+import SDWebImageWebPCoder
+import SDWebImage
 import UIKit
 import AppTrackingTransparency
 
@@ -40,6 +42,11 @@ import AppTrackingTransparency
 }
 
 extension AppDelegate {
+    private func setupSDWebCoder() {
+        let webPCoder = SDImageWebPCoder.shared
+        SDImageCodersManager.shared.addCoder(webPCoder)
+    }
+    
     private func setupAppData() {
         AppRunManager.shared.initData()
     }

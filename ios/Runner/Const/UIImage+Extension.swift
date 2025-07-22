@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import SDWebImageWebPCoder
 
 extension UIImage {
     /// 从RunnerBundle加载图片，支持jpg、png、webp。imgName需带后缀。

@@ -26,7 +26,8 @@ target 'Runner' do
   use_frameworks!
 
 pod 'SmartCodable'
-pod 'SDWebImage/WebP'
+pod 'SDWebImage'
+pod 'SDWebImageWebPCoder'
 pod 'IQKeyboardManagerSwift'
 pod 'YPImagePicker'
 pod 'Toast-Swift', '~> 5.1.1'
