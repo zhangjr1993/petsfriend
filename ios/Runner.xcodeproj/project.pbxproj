@@ -44,6 +44,7 @@
 		AE69526F2E2DF130009D5DDF /* RunnerBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE69523E2E2DF130009D5DDF /* RunnerBundle.bundle */; };
 		AE6952712E2DF130009D5DDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE69524A2E2DF130009D5DDF /* LaunchScreen.storyboard */; };
 		AE6952722E2DF130009D5DDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE69524C2E2DF130009D5DDF /* Main.storyboard */; };
+		AE6952782E2F218A009D5DDF /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AE6952772E2F218A009D5DDF /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -105,6 +106,7 @@
 		AE6952492E2DF130009D5DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE69524B2E2DF130009D5DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AE69524D2E2DF130009D5DDF /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
+		AE6952772E2F218A009D5DDF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		BB76A96E5D2F5D84B4AF1143 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		C476339A5B6E4B4DCF1ED169 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		CDDE4588F41511EE395E725C /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +270,7 @@
 				AE69524A2E2DF130009D5DDF /* LaunchScreen.storyboard */,
 				AE69524C2E2DF130009D5DDF /* Main.storyboard */,
 				AE69524D2E2DF130009D5DDF /* Runner-Bridging-Header.h */,
+				AE6952772E2F218A009D5DDF /* PrivacyInfo.xcprivacy */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				AE69526F2E2DF130009D5DDF /* RunnerBundle.bundle in Resources */,
 				AE6952712E2DF130009D5DDF /* LaunchScreen.storyboard in Resources */,
 				AE6952722E2DF130009D5DDF /* Main.storyboard in Resources */,
+				AE6952782E2F218A009D5DDF /* PrivacyInfo.xcprivacy in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
