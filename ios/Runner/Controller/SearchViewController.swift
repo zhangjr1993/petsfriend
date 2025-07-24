@@ -22,12 +22,23 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.setNavigationBarHidden(true, animated: false)
         allPets = AppRunManager.shared.petsList
+        // 过滤掉被拉黑的用户
+        let blockedIds = BlockedUserManager.shared.blockedUserIds
+        allPets = allPets.filter { !blockedIds.contains($0.id) }
         setupGradientBackground()
         setupTopBar()
         setupSearchContainer()
         setupTableView()
         setupEmptyView()
         updateResultPets("")
+        
+        // 监听拉黑状态变化
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUserBlocked), name: .userBlocked, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUserUnblocked), name: .userUnblocked, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     private func setupGradientBackground() {
@@ -195,6 +206,22 @@ class SearchViewController: UIViewController {
         }
         tableView.reloadData()
         emptyView.isHidden = !resultPets.isEmpty || kw.isEmpty
+    }
+    
+    @objc private func handleUserBlocked(_ notification: Notification) {
+        // 重新加载数据并更新搜索结果
+        allPets = AppRunManager.shared.petsList
+        let blockedIds = BlockedUserManager.shared.blockedUserIds
+        allPets = allPets.filter { !blockedIds.contains($0.id) }
+        updateResultPets(searchTextField.text ?? "")
+    }
+    
+    @objc private func handleUserUnblocked(_ notification: Notification) {
+        // 重新加载数据并更新搜索结果
+        allPets = AppRunManager.shared.petsList
+        let blockedIds = BlockedUserManager.shared.blockedUserIds
+        allPets = allPets.filter { !blockedIds.contains($0.id) }
+        updateResultPets(searchTextField.text ?? "")
     }
 }
 

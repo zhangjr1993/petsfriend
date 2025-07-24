@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
         setupHeaderView()
         loadPetData()
         NotificationCenter.default.addObserver(self, selector: #selector(refreshUserProfile), name: .userProfileDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUserBlocked), name: .userBlocked, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleUserUnblocked), name: .userUnblocked, object: nil)
     }
     
     deinit {
@@ -33,9 +35,22 @@ class HomeViewController: UIViewController {
         setupHeaderView()
     }
     
+    @objc private func handleUserBlocked(_ notification: Notification) {
+        // 用户被拉黑，重新加载数据
+        loadPetData()
+    }
+    
+    @objc private func handleUserUnblocked(_ notification: Notification) {
+        // 用户被解除拉黑，重新加载数据
+        loadPetData()
+    }
+    
     // MARK: - Data Loading
     private func loadPetData() {
         allPets = Array(AppRunManager.shared.petsList)
+        // 过滤掉被拉黑的用户
+        let blockedIds = BlockedUserManager.shared.blockedUserIds
+        allPets = allPets.filter { !blockedIds.contains($0.id) }
         petsArray = allPets.shuffled()
         tableView.reloadData()
     }
@@ -260,12 +275,17 @@ class HomeViewController: UIViewController {
     private func updateFilterUIAndData() {
         dogButton.isSelected = isDogSelected
         catButton.isSelected = isCatSelected
+        
+        // 先过滤掉被拉黑的用户
+        let blockedIds = BlockedUserManager.shared.blockedUserIds
+        let filteredPets = allPets.filter { !blockedIds.contains($0.id) }
+        
         if isDogSelected {
-            petsArray = allPets.filter { $0.petSex == "狗" }
+            petsArray = filteredPets.filter { $0.petSex == "狗" }
         } else if isCatSelected {
-            petsArray = allPets.filter { $0.petSex == "猫" }
+            petsArray = filteredPets.filter { $0.petSex == "猫" }
         } else {
-            petsArray = allPets
+            petsArray = filteredPets
         }
         let section = IndexSet(integer: 0)
         tableView.reloadSections(section, with: .fade)

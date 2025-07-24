@@ -34,6 +34,11 @@
 	<string>编辑头像或发布宠物动态、视频通话需要访问您的相册</string>
 	<key>NSUserTrackingUsageDescription</key>
 	<string>用于向你推荐相同宠物爱好的用户</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UIBackgroundModes</key>

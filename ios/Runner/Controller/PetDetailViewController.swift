@@ -15,7 +15,8 @@ class PetDetailViewController: UIViewController {
     var callButton: UIButton!
     private var topBarView: UIView! // 自定义顶部栏
     private var backButton: UIButton! // 自定义返回按钮
-     var reportButton: UIButton! // 举报按钮
+    var reportButton: UIButton! // 举报按钮
+    private var blockButton: UIButton! // 拉黑按钮
     
     // MARK: - Data
     private var petData: PetsCodable!
@@ -77,14 +78,31 @@ class PetDetailViewController: UIViewController {
             backButton.widthAnchor.constraint(equalToConstant: 32),
             backButton.heightAnchor.constraint(equalToConstant: 32)
         ])
+        // 拉黑按钮
+        blockButton = UIButton(type: .custom)
+        blockButton.setTitle("拉黑", for: .normal)
+        blockButton.setTitleColor(.white, for: .normal)
+        blockButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        blockButton.backgroundColor = UIColor(hex: "#FF6B35")
+        blockButton.layer.cornerRadius = 16
+        blockButton.addTarget(self, action: #selector(blockButtonTapped), for: .touchUpInside)
+        blockButton.translatesAutoresizingMaskIntoConstraints = false
+        topBarView.addSubview(blockButton)
+        
         // 举报按钮
         reportButton = UIButton(type: .custom)
         reportButton.setTitle("举报", for: .normal)
         reportButton.addTarget(self, action: #selector(reportButtonTapped), for: .touchUpInside)
         reportButton.translatesAutoresizingMaskIntoConstraints = false
         topBarView.addSubview(reportButton)
+        
         NSLayoutConstraint.activate([
-            reportButton.trailingAnchor.constraint(equalTo: topBarView.trailingAnchor, constant: -8),
+            blockButton.trailingAnchor.constraint(equalTo: topBarView.trailingAnchor, constant: -8),
+            blockButton.topAnchor.constraint(equalTo: topBarView.topAnchor, constant: UIApplication.statusBarHeight + 8),
+            blockButton.widthAnchor.constraint(equalToConstant: 60),
+            blockButton.heightAnchor.constraint(equalToConstant: 32),
+            
+            reportButton.trailingAnchor.constraint(equalTo: blockButton.leadingAnchor, constant: -8),
             reportButton.topAnchor.constraint(equalTo: topBarView.topAnchor, constant: UIApplication.statusBarHeight + 8),
             reportButton.widthAnchor.constraint(equalToConstant: 42),
             reportButton.heightAnchor.constraint(equalToConstant: 32)
@@ -259,6 +277,23 @@ class PetDetailViewController: UIViewController {
         let vc = VideoCallViewController(petData: petData)
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
+    }
+    
+    @objc private func blockButtonTapped() {
+        let alert = UIAlertController(title: "拉黑用户", message: "确定要拉黑 \(petData.userName) 吗？拉黑后将不再看到该用户的内容。", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel))
+        alert.addAction(UIAlertAction(title: "确定", style: .destructive) { [weak self] _ in
+            guard let self = self else { return }
+            BlockedUserManager.shared.blockUser(self.petData)
+            self.view.makeToast("已拉黑该用户")
+            // 延迟退出页面，让用户看到toast
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
+        
+        present(alert, animated: true)
     }
     
     @objc private func reportButtonTapped() {

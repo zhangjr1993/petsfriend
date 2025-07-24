@@ -9,46 +9,42 @@
 /* Begin PBXBuildFile section */
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		8747A27A59D123AF511C9C4E /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDE4588F41511EE395E725C /* Pods_Runner.framework */; };
-		AE6953112E31D29C009D5DDF /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952DC2E31D29C009D5DDF /* AppConst.swift */; };
-		AE6953122E31D29C009D5DDF /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952DD2E31D29C009D5DDF /* UIApplication+Extension.swift */; };
-		AE6953132E31D29C009D5DDF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952DE2E31D29C009D5DDF /* UIColor+Extension.swift */; };
-		AE6953142E31D29C009D5DDF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952DF2E31D29C009D5DDF /* UIImage+Extension.swift */; };
-		AE6953152E31D29C009D5DDF /* UserProfile+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E02E31D29C009D5DDF /* UserProfile+Cache.swift */; };
-		AE6953162E31D29C009D5DDF /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E22E31D29C009D5DDF /* AboutViewController.swift */; };
-		AE6953172E31D29C009D5DDF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E32E31D29C009D5DDF /* AddViewController.swift */; };
-		AE6953182E31D29C009D5DDF /* BlockedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E42E31D29C009D5DDF /* BlockedListViewController.swift */; };
-		AE6953192E31D29C009D5DDF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E52E31D29C009D5DDF /* ChatListViewController.swift */; };
-		AE69531A2E31D29C009D5DDF /* ChatMessageDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E62E31D29C009D5DDF /* ChatMessageDBManager.swift */; };
-		AE69531B2E31D29C009D5DDF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E72E31D29C009D5DDF /* ChatViewController.swift */; };
-		AE69531C2E31D29C009D5DDF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E82E31D29C009D5DDF /* EditProfileViewController.swift */; };
-		AE69531D2E31D29C009D5DDF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E92E31D29C009D5DDF /* HomeViewController.swift */; };
-		AE69531E2E31D29C009D5DDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952EA2E31D29C009D5DDF /* LoginViewController.swift */; };
-		AE69531F2E31D29C009D5DDF /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952EB2E31D29C009D5DDF /* MeViewController.swift */; };
-		AE6953202E31D29C009D5DDF /* PetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952EC2E31D29C009D5DDF /* PetDetailViewController.swift */; };
-		AE6953212E31D29C009D5DDF /* PhotoPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952ED2E31D29C009D5DDF /* PhotoPreviewController.swift */; };
-		AE6953222E31D29C009D5DDF /* PrivacyAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952EE2E31D29C009D5DDF /* PrivacyAgreementViewController.swift */; };
-		AE6953232E31D29C009D5DDF /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952EF2E31D29C009D5DDF /* ReportViewController.swift */; };
-		AE6953242E31D29C009D5DDF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F02E31D29C009D5DDF /* SearchViewController.swift */; };
-		AE6953252E31D29C009D5DDF /* UserAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F12E31D29C009D5DDF /* UserAgreementViewController.swift */; };
-		AE6953262E31D29C009D5DDF /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F22E31D29C009D5DDF /* VideoCallViewController.swift */; };
-		AE6953272E31D29C009D5DDF /* AppRunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F42E31D29C009D5DDF /* AppRunManager.swift */; };
-		AE6953282E31D29C009D5DDF /* BlockedUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F62E31D29C009D5DDF /* BlockedUserManager.swift */; };
-		AE6953292E31D29C009D5DDF /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F72E31D29C009D5DDF /* PetProfile.swift */; };
-		AE69532A2E31D29C009D5DDF /* PetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F82E31D29C009D5DDF /* PetsModel.swift */; };
-		AE69532B2E31D29C009D5DDF /* ZhipuAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F92E31D29C009D5DDF /* ZhipuAIService.swift */; };
-		AE69532C2E31D29C009D5DDF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6953002E31D29C009D5DDF /* CustomNavigationController.swift */; };
-		AE69532D2E31D29C009D5DDF /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6953012E31D29C009D5DDF /* CustomTabBarController.swift */; };
-		AE69532E2E31D29C009D5DDF /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6953032E31D29C009D5DDF /* HUDView.swift */; };
-		AE69532F2E31D29C009D5DDF /* PetInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6953042E31D29C009D5DDF /* PetInfoTableViewCell.swift */; };
-		AE6953302E31D29C009D5DDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6953062E31D29C009D5DDF /* AppDelegate.swift */; };
-		AE6953312E31D29C009D5DDF /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6953082E31D29C009D5DDF /* GeneratedPluginRegistrant.m */; };
-		AE6953322E31D29C009D5DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6952FB2E31D29C009D5DDF /* Assets.xcassets */; };
-		AE6953332E31D29C009D5DDF /* callingVoip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE6952FC2E31D29C009D5DDF /* callingVoip.mp3 */; };
-		AE6953342E31D29C009D5DDF /* Recommend.geojson in Resources */ = {isa = PBXBuildFile; fileRef = AE6952FD2E31D29C009D5DDF /* Recommend.geojson */; };
-		AE6953352E31D29C009D5DDF /* RunnerBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE6952FE2E31D29C009D5DDF /* RunnerBundle.bundle */; };
-		AE6953372E31D29C009D5DDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE69530B2E31D29C009D5DDF /* LaunchScreen.storyboard */; };
-		AE6953382E31D29C009D5DDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE69530D2E31D29C009D5DDF /* Main.storyboard */; };
-		AE6953392E31D29C009D5DDF /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AE69530E2E31D29C009D5DDF /* PrivacyInfo.xcprivacy */; };
+		AE69524F2E2DF130009D5DDF /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69521F2E2DF130009D5DDF /* AppConst.swift */; };
+		AE6952502E2DF130009D5DDF /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952202E2DF130009D5DDF /* UIApplication+Extension.swift */; };
+		AE6952512E2DF130009D5DDF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952212E2DF130009D5DDF /* UIColor+Extension.swift */; };
+		AE6952522E2DF130009D5DDF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952222E2DF130009D5DDF /* UIImage+Extension.swift */; };
+		AE6952532E2DF130009D5DDF /* UserProfile+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952232E2DF130009D5DDF /* UserProfile+Cache.swift */; };
+		AE6952542E2DF130009D5DDF /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952252E2DF130009D5DDF /* AboutViewController.swift */; };
+		AE6952552E2DF130009D5DDF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952262E2DF130009D5DDF /* AddViewController.swift */; };
+		AE6952562E2DF130009D5DDF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952272E2DF130009D5DDF /* ChatListViewController.swift */; };
+		AE6952572E2DF130009D5DDF /* ChatMessageDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952282E2DF130009D5DDF /* ChatMessageDBManager.swift */; };
+		AE6952582E2DF130009D5DDF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952292E2DF130009D5DDF /* ChatViewController.swift */; };
+		AE6952592E2DF130009D5DDF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69522A2E2DF130009D5DDF /* EditProfileViewController.swift */; };
+		AE69525A2E2DF130009D5DDF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69522B2E2DF130009D5DDF /* HomeViewController.swift */; };
+		AE69525B2E2DF130009D5DDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69522C2E2DF130009D5DDF /* LoginViewController.swift */; };
+		AE69525C2E2DF130009D5DDF /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69522D2E2DF130009D5DDF /* MeViewController.swift */; };
+		AE69525D2E2DF130009D5DDF /* PetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69522E2E2DF130009D5DDF /* PetDetailViewController.swift */; };
+		AE69525E2E2DF130009D5DDF /* PhotoPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE69522F2E2DF130009D5DDF /* PhotoPreviewController.swift */; };
+		AE69525F2E2DF130009D5DDF /* PrivacyAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952302E2DF130009D5DDF /* PrivacyAgreementViewController.swift */; };
+		AE6952602E2DF130009D5DDF /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952312E2DF130009D5DDF /* ReportViewController.swift */; };
+		AE6952612E2DF130009D5DDF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952322E2DF130009D5DDF /* SearchViewController.swift */; };
+		AE6952622E2DF130009D5DDF /* UserAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952332E2DF130009D5DDF /* UserAgreementViewController.swift */; };
+		AE6952632E2DF130009D5DDF /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952342E2DF130009D5DDF /* VideoCallViewController.swift */; };
+		AE6952642E2DF130009D5DDF /* AppRunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952362E2DF130009D5DDF /* AppRunManager.swift */; };
+		AE6952652E2DF130009D5DDF /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952382E2DF130009D5DDF /* PetProfile.swift */; };
+		AE6952662E2DF130009D5DDF /* PetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952392E2DF130009D5DDF /* PetsModel.swift */; };
+		AE6952672E2DF130009D5DDF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952402E2DF130009D5DDF /* CustomNavigationController.swift */; };
+		AE6952682E2DF130009D5DDF /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952412E2DF130009D5DDF /* CustomTabBarController.swift */; };
+		AE6952692E2DF130009D5DDF /* PetInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952432E2DF130009D5DDF /* PetInfoTableViewCell.swift */; };
+		AE69526A2E2DF130009D5DDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952452E2DF130009D5DDF /* AppDelegate.swift */; };
+		AE69526B2E2DF130009D5DDF /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6952472E2DF130009D5DDF /* GeneratedPluginRegistrant.m */; };
+		AE69526C2E2DF130009D5DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE69523B2E2DF130009D5DDF /* Assets.xcassets */; };
+		AE69526D2E2DF130009D5DDF /* callingVoip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE69523C2E2DF130009D5DDF /* callingVoip.mp3 */; };
+		AE69526E2E2DF130009D5DDF /* Recommend.geojson in Resources */ = {isa = PBXBuildFile; fileRef = AE69523D2E2DF130009D5DDF /* Recommend.geojson */; };
+		AE69526F2E2DF130009D5DDF /* RunnerBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE69523E2E2DF130009D5DDF /* RunnerBundle.bundle */; };
+		AE6952712E2DF130009D5DDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE69524A2E2DF130009D5DDF /* LaunchScreen.storyboard */; };
+		AE6952722E2DF130009D5DDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE69524C2E2DF130009D5DDF /* Main.storyboard */; };
+		AE6952782E2F218A009D5DDF /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AE6952772E2F218A009D5DDF /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,49 +68,45 @@
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
 		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3B54F8F8C677B50BD8DD36 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
-		AE6952DC2E31D29C009D5DDF /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
-		AE6952DD2E31D29C009D5DDF /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
-		AE6952DE2E31D29C009D5DDF /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		AE6952DF2E31D29C009D5DDF /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		AE6952E02E31D29C009D5DDF /* UserProfile+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfile+Cache.swift"; sourceTree = "<group>"; };
-		AE6952E22E31D29C009D5DDF /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		AE6952E32E31D29C009D5DDF /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		AE6952E42E31D29C009D5DDF /* BlockedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedListViewController.swift; sourceTree = "<group>"; };
-		AE6952E52E31D29C009D5DDF /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
-		AE6952E62E31D29C009D5DDF /* ChatMessageDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDBManager.swift; sourceTree = "<group>"; };
-		AE6952E72E31D29C009D5DDF /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		AE6952E82E31D29C009D5DDF /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		AE6952E92E31D29C009D5DDF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		AE6952EA2E31D29C009D5DDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		AE6952EB2E31D29C009D5DDF /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
-		AE6952EC2E31D29C009D5DDF /* PetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewController.swift; sourceTree = "<group>"; };
-		AE6952ED2E31D29C009D5DDF /* PhotoPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewController.swift; sourceTree = "<group>"; };
-		AE6952EE2E31D29C009D5DDF /* PrivacyAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAgreementViewController.swift; sourceTree = "<group>"; };
-		AE6952EF2E31D29C009D5DDF /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
-		AE6952F02E31D29C009D5DDF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		AE6952F12E31D29C009D5DDF /* UserAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementViewController.swift; sourceTree = "<group>"; };
-		AE6952F22E31D29C009D5DDF /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
-		AE6952F42E31D29C009D5DDF /* AppRunManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRunManager.swift; sourceTree = "<group>"; };
-		AE6952F62E31D29C009D5DDF /* BlockedUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserManager.swift; sourceTree = "<group>"; };
-		AE6952F72E31D29C009D5DDF /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
-		AE6952F82E31D29C009D5DDF /* PetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsModel.swift; sourceTree = "<group>"; };
-		AE6952F92E31D29C009D5DDF /* ZhipuAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhipuAIService.swift; sourceTree = "<group>"; };
-		AE6952FB2E31D29C009D5DDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AE6952FC2E31D29C009D5DDF /* callingVoip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = callingVoip.mp3; sourceTree = "<group>"; };
-		AE6952FD2E31D29C009D5DDF /* Recommend.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Recommend.geojson; sourceTree = "<group>"; };
-		AE6952FE2E31D29C009D5DDF /* RunnerBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RunnerBundle.bundle; sourceTree = "<group>"; };
-		AE6953002E31D29C009D5DDF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
-		AE6953012E31D29C009D5DDF /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		AE6953032E31D29C009D5DDF /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
-		AE6953042E31D29C009D5DDF /* PetInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfoTableViewCell.swift; sourceTree = "<group>"; };
-		AE6953062E31D29C009D5DDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE6953072E31D29C009D5DDF /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
-		AE6953082E31D29C009D5DDF /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
-		AE6953092E31D29C009D5DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE69530A2E31D29C009D5DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AE69530C2E31D29C009D5DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AE69530E2E31D29C009D5DDF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		AE69530F2E31D29C009D5DDF /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
+		AE69521F2E2DF130009D5DDF /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
+		AE6952202E2DF130009D5DDF /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		AE6952212E2DF130009D5DDF /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		AE6952222E2DF130009D5DDF /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		AE6952232E2DF130009D5DDF /* UserProfile+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfile+Cache.swift"; sourceTree = "<group>"; };
+		AE6952252E2DF130009D5DDF /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		AE6952262E2DF130009D5DDF /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		AE6952272E2DF130009D5DDF /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		AE6952282E2DF130009D5DDF /* ChatMessageDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDBManager.swift; sourceTree = "<group>"; };
+		AE6952292E2DF130009D5DDF /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		AE69522A2E2DF130009D5DDF /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		AE69522B2E2DF130009D5DDF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AE69522C2E2DF130009D5DDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AE69522D2E2DF130009D5DDF /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		AE69522E2E2DF130009D5DDF /* PetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewController.swift; sourceTree = "<group>"; };
+		AE69522F2E2DF130009D5DDF /* PhotoPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewController.swift; sourceTree = "<group>"; };
+		AE6952302E2DF130009D5DDF /* PrivacyAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAgreementViewController.swift; sourceTree = "<group>"; };
+		AE6952312E2DF130009D5DDF /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		AE6952322E2DF130009D5DDF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AE6952332E2DF130009D5DDF /* UserAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementViewController.swift; sourceTree = "<group>"; };
+		AE6952342E2DF130009D5DDF /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
+		AE6952362E2DF130009D5DDF /* AppRunManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRunManager.swift; sourceTree = "<group>"; };
+		AE6952382E2DF130009D5DDF /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
+		AE6952392E2DF130009D5DDF /* PetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsModel.swift; sourceTree = "<group>"; };
+		AE69523B2E2DF130009D5DDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE69523C2E2DF130009D5DDF /* callingVoip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = callingVoip.mp3; sourceTree = "<group>"; };
+		AE69523D2E2DF130009D5DDF /* Recommend.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Recommend.geojson; sourceTree = "<group>"; };
+		AE69523E2E2DF130009D5DDF /* RunnerBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RunnerBundle.bundle; sourceTree = "<group>"; };
+		AE6952402E2DF130009D5DDF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		AE6952412E2DF130009D5DDF /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		AE6952432E2DF130009D5DDF /* PetInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfoTableViewCell.swift; sourceTree = "<group>"; };
+		AE6952452E2DF130009D5DDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AE6952462E2DF130009D5DDF /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
+		AE6952472E2DF130009D5DDF /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
+		AE6952482E2DF130009D5DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE6952492E2DF130009D5DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AE69524B2E2DF130009D5DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE69524D2E2DF130009D5DDF /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
+		AE6952772E2F218A009D5DDF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		BB76A96E5D2F5D84B4AF1143 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		C476339A5B6E4B4DCF1ED169 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		CDDE4588F41511EE395E725C /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				9740EEB11CF90186004384FC /* Flutter */,
-				AE6953102E31D29C009D5DDF /* Runner */,
+				AE69524E2E2DF130009D5DDF /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
 				8E1CE4F49F4F71BBBC9F953E /* Pods */,
@@ -181,108 +173,104 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AE6952E12E31D29C009D5DDF /* Const */ = {
+		AE6952242E2DF130009D5DDF /* Const */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952DC2E31D29C009D5DDF /* AppConst.swift */,
-				AE6952DD2E31D29C009D5DDF /* UIApplication+Extension.swift */,
-				AE6952DE2E31D29C009D5DDF /* UIColor+Extension.swift */,
-				AE6952DF2E31D29C009D5DDF /* UIImage+Extension.swift */,
-				AE6952E02E31D29C009D5DDF /* UserProfile+Cache.swift */,
+				AE69521F2E2DF130009D5DDF /* AppConst.swift */,
+				AE6952202E2DF130009D5DDF /* UIApplication+Extension.swift */,
+				AE6952212E2DF130009D5DDF /* UIColor+Extension.swift */,
+				AE6952222E2DF130009D5DDF /* UIImage+Extension.swift */,
+				AE6952232E2DF130009D5DDF /* UserProfile+Cache.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
 		};
-		AE6952F32E31D29C009D5DDF /* Controller */ = {
+		AE6952352E2DF130009D5DDF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952E22E31D29C009D5DDF /* AboutViewController.swift */,
-				AE6952E32E31D29C009D5DDF /* AddViewController.swift */,
-				AE6952E42E31D29C009D5DDF /* BlockedListViewController.swift */,
-				AE6952E52E31D29C009D5DDF /* ChatListViewController.swift */,
-				AE6952E62E31D29C009D5DDF /* ChatMessageDBManager.swift */,
-				AE6952E72E31D29C009D5DDF /* ChatViewController.swift */,
-				AE6952E82E31D29C009D5DDF /* EditProfileViewController.swift */,
-				AE6952E92E31D29C009D5DDF /* HomeViewController.swift */,
-				AE6952EA2E31D29C009D5DDF /* LoginViewController.swift */,
-				AE6952EB2E31D29C009D5DDF /* MeViewController.swift */,
-				AE6952EC2E31D29C009D5DDF /* PetDetailViewController.swift */,
-				AE6952ED2E31D29C009D5DDF /* PhotoPreviewController.swift */,
-				AE6952EE2E31D29C009D5DDF /* PrivacyAgreementViewController.swift */,
-				AE6952EF2E31D29C009D5DDF /* ReportViewController.swift */,
-				AE6952F02E31D29C009D5DDF /* SearchViewController.swift */,
-				AE6952F12E31D29C009D5DDF /* UserAgreementViewController.swift */,
-				AE6952F22E31D29C009D5DDF /* VideoCallViewController.swift */,
+				AE6952252E2DF130009D5DDF /* AboutViewController.swift */,
+				AE6952262E2DF130009D5DDF /* AddViewController.swift */,
+				AE6952272E2DF130009D5DDF /* ChatListViewController.swift */,
+				AE6952282E2DF130009D5DDF /* ChatMessageDBManager.swift */,
+				AE6952292E2DF130009D5DDF /* ChatViewController.swift */,
+				AE69522A2E2DF130009D5DDF /* EditProfileViewController.swift */,
+				AE69522B2E2DF130009D5DDF /* HomeViewController.swift */,
+				AE69522C2E2DF130009D5DDF /* LoginViewController.swift */,
+				AE69522D2E2DF130009D5DDF /* MeViewController.swift */,
+				AE69522E2E2DF130009D5DDF /* PetDetailViewController.swift */,
+				AE69522F2E2DF130009D5DDF /* PhotoPreviewController.swift */,
+				AE6952302E2DF130009D5DDF /* PrivacyAgreementViewController.swift */,
+				AE6952312E2DF130009D5DDF /* ReportViewController.swift */,
+				AE6952322E2DF130009D5DDF /* SearchViewController.swift */,
+				AE6952332E2DF130009D5DDF /* UserAgreementViewController.swift */,
+				AE6952342E2DF130009D5DDF /* VideoCallViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		AE6952F52E31D29C009D5DDF /* Gloab */ = {
+		AE6952372E2DF130009D5DDF /* Gloab */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952F42E31D29C009D5DDF /* AppRunManager.swift */,
+				AE6952362E2DF130009D5DDF /* AppRunManager.swift */,
 			);
 			path = Gloab;
 			sourceTree = "<group>";
 		};
-		AE6952FA2E31D29C009D5DDF /* Models */ = {
+		AE69523A2E2DF130009D5DDF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952F62E31D29C009D5DDF /* BlockedUserManager.swift */,
-				AE6952F72E31D29C009D5DDF /* PetProfile.swift */,
-				AE6952F82E31D29C009D5DDF /* PetsModel.swift */,
-				AE6952F92E31D29C009D5DDF /* ZhipuAIService.swift */,
+				AE6952382E2DF130009D5DDF /* PetProfile.swift */,
+				AE6952392E2DF130009D5DDF /* PetsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		AE6952FF2E31D29C009D5DDF /* Resource */ = {
+		AE69523F2E2DF130009D5DDF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952FB2E31D29C009D5DDF /* Assets.xcassets */,
-				AE6952FC2E31D29C009D5DDF /* callingVoip.mp3 */,
-				AE6952FD2E31D29C009D5DDF /* Recommend.geojson */,
-				AE6952FE2E31D29C009D5DDF /* RunnerBundle.bundle */,
+				AE69523B2E2DF130009D5DDF /* Assets.xcassets */,
+				AE69523C2E2DF130009D5DDF /* callingVoip.mp3 */,
+				AE69523D2E2DF130009D5DDF /* Recommend.geojson */,
+				AE69523E2E2DF130009D5DDF /* RunnerBundle.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		AE6953022E31D29C009D5DDF /* TabBar */ = {
+		AE6952422E2DF130009D5DDF /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				AE6953002E31D29C009D5DDF /* CustomNavigationController.swift */,
-				AE6953012E31D29C009D5DDF /* CustomTabBarController.swift */,
+				AE6952402E2DF130009D5DDF /* CustomNavigationController.swift */,
+				AE6952412E2DF130009D5DDF /* CustomTabBarController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		AE6953052E31D29C009D5DDF /* View */ = {
+		AE6952442E2DF130009D5DDF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AE6953032E31D29C009D5DDF /* HUDView.swift */,
-				AE6953042E31D29C009D5DDF /* PetInfoTableViewCell.swift */,
+				AE6952432E2DF130009D5DDF /* PetInfoTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		AE6953102E31D29C009D5DDF /* Runner */ = {
+		AE69524E2E2DF130009D5DDF /* Runner */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952E12E31D29C009D5DDF /* Const */,
-				AE6952F32E31D29C009D5DDF /* Controller */,
-				AE6952F52E31D29C009D5DDF /* Gloab */,
-				AE6952FA2E31D29C009D5DDF /* Models */,
-				AE6952FF2E31D29C009D5DDF /* Resource */,
-				AE6953022E31D29C009D5DDF /* TabBar */,
-				AE6953052E31D29C009D5DDF /* View */,
-				AE6953062E31D29C009D5DDF /* AppDelegate.swift */,
-				AE6953072E31D29C009D5DDF /* GeneratedPluginRegistrant.h */,
-				AE6953082E31D29C009D5DDF /* GeneratedPluginRegistrant.m */,
-				AE6953092E31D29C009D5DDF /* Info.plist */,
-				AE69530B2E31D29C009D5DDF /* LaunchScreen.storyboard */,
-				AE69530D2E31D29C009D5DDF /* Main.storyboard */,
-				AE69530E2E31D29C009D5DDF /* PrivacyInfo.xcprivacy */,
-				AE69530F2E31D29C009D5DDF /* Runner-Bridging-Header.h */,
+				AE6952242E2DF130009D5DDF /* Const */,
+				AE6952352E2DF130009D5DDF /* Controller */,
+				AE6952372E2DF130009D5DDF /* Gloab */,
+				AE69523A2E2DF130009D5DDF /* Models */,
+				AE69523F2E2DF130009D5DDF /* Resource */,
+				AE6952422E2DF130009D5DDF /* TabBar */,
+				AE6952442E2DF130009D5DDF /* View */,
+				AE6952452E2DF130009D5DDF /* AppDelegate.swift */,
+				AE6952462E2DF130009D5DDF /* GeneratedPluginRegistrant.h */,
+				AE6952472E2DF130009D5DDF /* GeneratedPluginRegistrant.m */,
+				AE6952482E2DF130009D5DDF /* Info.plist */,
+				AE69524A2E2DF130009D5DDF /* LaunchScreen.storyboard */,
+				AE69524C2E2DF130009D5DDF /* Main.storyboard */,
+				AE69524D2E2DF130009D5DDF /* Runner-Bridging-Header.h */,
+				AE6952772E2F218A009D5DDF /* PrivacyInfo.xcprivacy */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -359,13 +347,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE6953322E31D29C009D5DDF /* Assets.xcassets in Resources */,
-				AE6953332E31D29C009D5DDF /* callingVoip.mp3 in Resources */,
-				AE6953342E31D29C009D5DDF /* Recommend.geojson in Resources */,
-				AE6953352E31D29C009D5DDF /* RunnerBundle.bundle in Resources */,
-				AE6953372E31D29C009D5DDF /* LaunchScreen.storyboard in Resources */,
-				AE6953382E31D29C009D5DDF /* Main.storyboard in Resources */,
-				AE6953392E31D29C009D5DDF /* PrivacyInfo.xcprivacy in Resources */,
+				AE69526C2E2DF130009D5DDF /* Assets.xcassets in Resources */,
+				AE69526D2E2DF130009D5DDF /* callingVoip.mp3 in Resources */,
+				AE69526E2E2DF130009D5DDF /* Recommend.geojson in Resources */,
+				AE69526F2E2DF130009D5DDF /* RunnerBundle.bundle in Resources */,
+				AE6952712E2DF130009D5DDF /* LaunchScreen.storyboard in Resources */,
+				AE6952722E2DF130009D5DDF /* Main.storyboard in Resources */,
+				AE6952782E2F218A009D5DDF /* PrivacyInfo.xcprivacy in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,57 +438,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE6953112E31D29C009D5DDF /* AppConst.swift in Sources */,
-				AE6953122E31D29C009D5DDF /* UIApplication+Extension.swift in Sources */,
-				AE6953132E31D29C009D5DDF /* UIColor+Extension.swift in Sources */,
-				AE6953142E31D29C009D5DDF /* UIImage+Extension.swift in Sources */,
-				AE6953152E31D29C009D5DDF /* UserProfile+Cache.swift in Sources */,
-				AE6953162E31D29C009D5DDF /* AboutViewController.swift in Sources */,
-				AE6953172E31D29C009D5DDF /* AddViewController.swift in Sources */,
-				AE6953182E31D29C009D5DDF /* BlockedListViewController.swift in Sources */,
-				AE6953192E31D29C009D5DDF /* ChatListViewController.swift in Sources */,
-				AE69531A2E31D29C009D5DDF /* ChatMessageDBManager.swift in Sources */,
-				AE69531B2E31D29C009D5DDF /* ChatViewController.swift in Sources */,
-				AE69531C2E31D29C009D5DDF /* EditProfileViewController.swift in Sources */,
-				AE69531D2E31D29C009D5DDF /* HomeViewController.swift in Sources */,
-				AE69531E2E31D29C009D5DDF /* LoginViewController.swift in Sources */,
-				AE69531F2E31D29C009D5DDF /* MeViewController.swift in Sources */,
-				AE6953202E31D29C009D5DDF /* PetDetailViewController.swift in Sources */,
-				AE6953212E31D29C009D5DDF /* PhotoPreviewController.swift in Sources */,
-				AE6953222E31D29C009D5DDF /* PrivacyAgreementViewController.swift in Sources */,
-				AE6953232E31D29C009D5DDF /* ReportViewController.swift in Sources */,
-				AE6953242E31D29C009D5DDF /* SearchViewController.swift in Sources */,
-				AE6953252E31D29C009D5DDF /* UserAgreementViewController.swift in Sources */,
-				AE6953262E31D29C009D5DDF /* VideoCallViewController.swift in Sources */,
-				AE6953272E31D29C009D5DDF /* AppRunManager.swift in Sources */,
-				AE6953282E31D29C009D5DDF /* BlockedUserManager.swift in Sources */,
-				AE6953292E31D29C009D5DDF /* PetProfile.swift in Sources */,
-				AE69532A2E31D29C009D5DDF /* PetsModel.swift in Sources */,
-				AE69532B2E31D29C009D5DDF /* ZhipuAIService.swift in Sources */,
-				AE69532C2E31D29C009D5DDF /* CustomNavigationController.swift in Sources */,
-				AE69532D2E31D29C009D5DDF /* CustomTabBarController.swift in Sources */,
-				AE69532E2E31D29C009D5DDF /* HUDView.swift in Sources */,
-				AE69532F2E31D29C009D5DDF /* PetInfoTableViewCell.swift in Sources */,
-				AE6953302E31D29C009D5DDF /* AppDelegate.swift in Sources */,
-				AE6953312E31D29C009D5DDF /* GeneratedPluginRegistrant.m in Sources */,
+				AE69524F2E2DF130009D5DDF /* AppConst.swift in Sources */,
+				AE6952502E2DF130009D5DDF /* UIApplication+Extension.swift in Sources */,
+				AE6952512E2DF130009D5DDF /* UIColor+Extension.swift in Sources */,
+				AE6952522E2DF130009D5DDF /* UIImage+Extension.swift in Sources */,
+				AE6952532E2DF130009D5DDF /* UserProfile+Cache.swift in Sources */,
+				AE6952542E2DF130009D5DDF /* AboutViewController.swift in Sources */,
+				AE6952552E2DF130009D5DDF /* AddViewController.swift in Sources */,
+				AE6952562E2DF130009D5DDF /* ChatListViewController.swift in Sources */,
+				AE6952572E2DF130009D5DDF /* ChatMessageDBManager.swift in Sources */,
+				AE6952582E2DF130009D5DDF /* ChatViewController.swift in Sources */,
+				AE6952592E2DF130009D5DDF /* EditProfileViewController.swift in Sources */,
+				AE69525A2E2DF130009D5DDF /* HomeViewController.swift in Sources */,
+				AE69525B2E2DF130009D5DDF /* LoginViewController.swift in Sources */,
+				AE69525C2E2DF130009D5DDF /* MeViewController.swift in Sources */,
+				AE69525D2E2DF130009D5DDF /* PetDetailViewController.swift in Sources */,
+				AE69525E2E2DF130009D5DDF /* PhotoPreviewController.swift in Sources */,
+				AE69525F2E2DF130009D5DDF /* PrivacyAgreementViewController.swift in Sources */,
+				AE6952602E2DF130009D5DDF /* ReportViewController.swift in Sources */,
+				AE6952612E2DF130009D5DDF /* SearchViewController.swift in Sources */,
+				AE6952622E2DF130009D5DDF /* UserAgreementViewController.swift in Sources */,
+				AE6952632E2DF130009D5DDF /* VideoCallViewController.swift in Sources */,
+				AE6952642E2DF130009D5DDF /* AppRunManager.swift in Sources */,
+				AE6952652E2DF130009D5DDF /* PetProfile.swift in Sources */,
+				AE6952662E2DF130009D5DDF /* PetsModel.swift in Sources */,
+				AE6952672E2DF130009D5DDF /* CustomNavigationController.swift in Sources */,
+				AE6952682E2DF130009D5DDF /* CustomTabBarController.swift in Sources */,
+				AE6952692E2DF130009D5DDF /* PetInfoTableViewCell.swift in Sources */,
+				AE69526A2E2DF130009D5DDF /* AppDelegate.swift in Sources */,
+				AE69526B2E2DF130009D5DDF /* GeneratedPluginRegistrant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AE69530B2E31D29C009D5DDF /* LaunchScreen.storyboard */ = {
+		AE69524A2E2DF130009D5DDF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AE69530A2E31D29C009D5DDF /* Base */,
+				AE6952492E2DF130009D5DDF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		AE69530D2E31D29C009D5DDF /* Main.storyboard */ = {
+		AE69524C2E2DF130009D5DDF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AE69530C2E31D29C009D5DDF /* Base */,
+				AE69524B2E2DF130009D5DDF /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -571,8 +555,8 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/runner/work/petsfriend/petsfriend;
-				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.32.7-stable/arm64";
+				FLUTTER_APPLICATION_PATH = /Users/tmp/Desktop/petsfriend;
+				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -717,8 +701,8 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/runner/work/petsfriend/petsfriend;
-				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.32.7-stable/arm64";
+				FLUTTER_APPLICATION_PATH = /Users/tmp/Desktop/petsfriend;
+				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -754,8 +738,8 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/runner/work/petsfriend/petsfriend;
-				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.32.7-stable/arm64";
+				FLUTTER_APPLICATION_PATH = /Users/tmp/Desktop/petsfriend;
+				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

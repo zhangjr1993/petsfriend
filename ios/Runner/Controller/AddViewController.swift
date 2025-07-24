@@ -258,6 +258,20 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         saveButton.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
         view.addSubview(saveButton)
+        
+        // 添加测试按钮（开发阶段使用，生产环境可移除）
+        #if DEBUG
+        let testButton = UIButton(type: .custom)
+        testButton.setTitle("测试API", for: .normal)
+        testButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        testButton.setTitleColor(.white, for: .normal)
+        testButton.backgroundColor = UIColor(hex: "#4874F5")
+        testButton.layer.cornerRadius = 20
+        testButton.translatesAutoresizingMaskIntoConstraints = false
+        testButton.addTarget(self, action: #selector(testAPITapped), for: .touchUpInside)
+        view.addSubview(testButton)
+        #endif
+        
         NSLayoutConstraint.activate([
             saveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
             saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -288,6 +302,30 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
               !descText.isEmpty,
               albumImages.count > 0 else { return }
 
+        // 显示HUD
+        let hud = HUDView()
+        hud.show(in: view)
+        hud.updateMessage("内容审核中...")
+        
+        // 调用智普AI进行内容审核
+        ZhipuAIService.shared.checkContent(name: nameText, age: ageText, description: descText) { [weak self] isPassed, errorMessage in
+            DispatchQueue.main.async {
+                hud.hide()
+                
+                if isPassed {
+                    // 审核通过，继续保存流程
+                    self?.savePetData(avatarData: avatarData, type: type)
+                } else {
+                    // 审核不通过，显示错误提示
+                    let alert = UIAlertController(title: "内容审核未通过", message: errorMessage ?? "内容包含不当信息", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "确定", style: .default))
+                    self?.present(alert, animated: true)
+                }
+            }
+        }
+    }
+    
+    private func savePetData(avatarData: Data, type: String) {
         let albumDatas = albumImages.compactMap { $0.jpegData(compressionQuality: 0.8) }
         let newPet = PetProfile(
             name: nameText,
@@ -318,8 +356,9 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
         albumImages = []
         tableView.reloadData()
         updateSaveButtonState()
-        // 弹出toast
-        let alert = UIAlertController(title: nil, message: "保存成功，内容审核中", preferredStyle: .alert)
+        
+        // 弹出成功toast
+        let alert = UIAlertController(title: nil, message: "保存成功", preferredStyle: .alert)
         self.present(alert, animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
             alert.dismiss(animated: true, completion: nil)
@@ -331,6 +370,25 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
             sender.text = String(text.prefix(10))
         }
     }
+    
+    #if DEBUG
+    // 测试API连接
+    @objc private func testAPITapped() {
+        let hud = HUDView()
+        hud.show(in: view)
+        hud.updateMessage("测试API连接...")
+        
+        ZhipuAIService.shared.checkContent(name: "测试", age: "1岁", description: "这是一只可爱的小狗") { [weak self] isPassed, errorMessage in
+            DispatchQueue.main.async {
+                hud.hide()
+                
+                let alert = UIAlertController(title: "API测试结果", message: isPassed ? "API连接成功" : "API连接失败: \(errorMessage ?? "未知错误")", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "确定", style: .default))
+                self?.present(alert, animated: true)
+            }
+        }
+    }
+    #endif
 }
 
 // MARK: - PetNameCell
@@ -560,8 +618,8 @@ class PetAlbumCell: UITableViewCell, UICollectionViewDataSource, UICollectionVie
         ])
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: (UIApplication.viewWidth-84)/3, height: (UIApplication.viewWidth-84)/3)
-        layout.minimumLineSpacing = 10
-        layout.minimumInteritemSpacing = 10
+        layout.minimumLineSpacing = 9.9999
+        layout.minimumInteritemSpacing = 9.9999
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false

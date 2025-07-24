@@ -10,6 +10,7 @@ class MeViewController: UIViewController, MyPetCollectionCellDelegate {
     private let functionItems: [(icon: String, title: String)] = [
         ("icon_me_ment", "用户协议"),
         ("icon_me_ment", "隐私协议"),
+        ("icon_me_block", "拉黑列表"),
         ("icon_me_about", "关于")
     ]
     private let avatarSize: CGFloat = 98
@@ -189,6 +190,10 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
             }else if indexPath.row == 1 {
                 let vc = PrivacyAgreementViewController()
                 navigationController?.pushViewController(vc, animated: true)
+            }else if indexPath.row == 2 {
+                // 拉黑列表
+                let vc = BlockedListViewController()
+                navigationController?.pushViewController(vc, animated: true)
             }else {
                 // 关于
                 let vc = AboutViewController()
@@ -254,7 +259,8 @@ extension MyPetCollectionCell: UICollectionViewDataSource, UICollectionViewDeleg
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyPetCardCell", for: indexPath) as! MyPetCardCell
-        cell.configure(with: pets[indexPath.item])
+        let pet = pets[indexPath.item]
+        cell.configure(with: pet, showReviewStatus: true) // 暂时设置为true来显示效果
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -267,6 +273,7 @@ class MyPetCardCell: UICollectionViewCell {
     private let nameLab = UILabel()
     private let tagLab = UILabel()
     private let ageLab = UILabel()
+    private let reviewStatusLab = UILabel()
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .clear
@@ -292,15 +299,34 @@ class MyPetCardCell: UICollectionViewCell {
         ageLab.layer.masksToBounds = true
         ageLab.textAlignment = .center
         ageLab.translatesAutoresizingMaskIntoConstraints = false
+        
+        // 审核状态标签
+        reviewStatusLab.font = UIFont.systemFont(ofSize: 10)
+        reviewStatusLab.textColor = .white
+        reviewStatusLab.backgroundColor = UIColor(hex: "#FF6B35")
+        reviewStatusLab.layer.cornerRadius = 8
+        reviewStatusLab.layer.masksToBounds = true
+        reviewStatusLab.textAlignment = .center
+        reviewStatusLab.text = "审核中"
+        reviewStatusLab.translatesAutoresizingMaskIntoConstraints = false
+        
         contentView.addSubview(imageView)
         contentView.addSubview(nameLab)
         contentView.addSubview(tagLab)
         contentView.addSubview(ageLab)
+        contentView.addSubview(reviewStatusLab)
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 160),
+            
+            // 审核状态标签约束 - 右上角
+            reviewStatusLab.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            reviewStatusLab.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            reviewStatusLab.heightAnchor.constraint(equalToConstant: 16),
+            reviewStatusLab.widthAnchor.constraint(equalToConstant: 40),
+            
             nameLab.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12),
             nameLab.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
             tagLab.leadingAnchor.constraint(equalTo: nameLab.leadingAnchor),
@@ -312,7 +338,7 @@ class MyPetCardCell: UICollectionViewCell {
         ])
     }
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    func configure(with pet: PetProfile) {
+    func configure(with pet: PetProfile, showReviewStatus: Bool = false) {
         if let img = UIImage(data: pet.avatarData) {
             imageView.image = img
         } else {
@@ -325,6 +351,9 @@ class MyPetCardCell: UICollectionViewCell {
         let ageW = pet.age.size(withAttributes: [.font: UIFont.systemFont(ofSize: 12)]).width + 16
         tagLab.widthAnchor.constraint(equalToConstant: tagW).isActive = true
         ageLab.widthAnchor.constraint(equalToConstant: ageW).isActive = true
+        
+        // 控制审核状态标签的显示
+        reviewStatusLab.isHidden = !showReviewStatus
     }
 }
 class FunctionCell: UITableViewCell {
