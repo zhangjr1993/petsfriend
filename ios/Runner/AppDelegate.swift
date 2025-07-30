@@ -1,4 +1,5 @@
 import Flutter
+import StoreKit
 import SDWebImageWebPCoder
 import SDWebImage
 import UIKit
@@ -49,6 +50,12 @@ extension AppDelegate {
     
     private func setupAppData() {
         AppRunManager.shared.initData()
+        
+        // 初始化IAPManager
+        SKPaymentQueue.default().add(IAPManager.shared)
+        
+        // 请求产品信息
+        IAPManager.shared.requestProducts()
     }
     
     

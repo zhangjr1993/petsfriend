@@ -236,9 +236,87 @@ class PetDetailViewController: UIViewController {
     }
     
     @objc private func callButtonTapped() {
+        // 检查是否是第一次通话
+        let isFirstCall = UserDefaults.standard.bool(forKey: "hasMadeFirstCall")
+        
+        if !isFirstCall {
+            // 第一次通话，显示提示
+            showFirstCallAlert()
+            UserDefaults.standard.set(true, forKey: "hasMadeFirstCall")
+        } else {
+            // 非第一次通话，检查用户状态
+            let userInfo = UserManager.shared.userInfo
+            if userInfo.isVip {
+                // 会员用户免费使用
+                proceedWithCall()
+            } else if userInfo.diamondBalance >= 20 {
+                // 非会员用户需要消耗钻石
+                showCallDiamondAlert { [weak self] in
+                    self?.proceedWithCall()
+                }
+            } else {
+                showInsufficientDiamondsForCall()
+            }
+        }
+    }
+    
+    private func showFirstCallAlert() {
+        let alert = UIAlertController(
+            title: "通话费用提醒",
+            message: "视频通话需要消耗20钻石/分钟，是否继续？",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel))
+        alert.addAction(UIAlertAction(title: "继续", style: .default) { [weak self] _ in
+            self?.proceedWithCall()
+        })
+        
+        present(alert, animated: true)
+    }
+    
+    private func showCallDiamondAlert(completion: @escaping () -> Void) {
+        let alert = UIAlertController(
+            title: "钻石消耗提醒",
+            message: "视频通话需要消耗20钻石/分钟，是否继续？",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel))
+        alert.addAction(UIAlertAction(title: "继续", style: .default) { _ in
+            // 扣除钻石
+            UserManager.shared.consumeDiamonds(20)
+            completion()
+        })
+        
+        present(alert, animated: true)
+    }
+    
+    private func showInsufficientDiamondsForCall() {
+        let alert = UIAlertController(
+            title: "钻石不足",
+            message: "您的钻石余额不足，需要20钻石才能进行视频通话。是否前往充值？",
+            preferredStyle: .alert
+        )
+        
+        alert.addAction(UIAlertAction(title: "取消", style: .cancel))
+        alert.addAction(UIAlertAction(title: "去充值", style: .default) { [weak self] _ in
+            self?.showRechargeOptions()
+        })
+        
+        present(alert, animated: true)
+    }
+    
+    private func showRechargeOptions() {
+        let vc = VIPCenterViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func proceedWithCall() {
         // 1. 检查摄像头和麦克风权限
         let videoStatus = AVCaptureDevice.authorizationStatus(for: .video)
         let audioStatus = AVCaptureDevice.authorizationStatus(for: .audio)
+        
         func showDeniedAlert(_ type: String) {
             let alert = UIAlertController(title: "无法访问\(type)", message: "请在设置中打开\(type)权限", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "去设置", style: .default) { _ in
@@ -249,11 +327,12 @@ class PetDetailViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "取消", style: .cancel))
             present(alert, animated: true)
         }
+        
         guard videoStatus == .authorized else {
             if videoStatus == .notDetermined {
                 AVCaptureDevice.requestAccess(for: .video) { granted in
                     DispatchQueue.main.async {
-                        if granted { self.callButtonTapped() } else { showDeniedAlert("摄像头") }
+                        if granted { self.proceedWithCall() } else { showDeniedAlert("摄像头") }
                     }
                 }
             } else {
@@ -261,11 +340,12 @@ class PetDetailViewController: UIViewController {
             }
             return
         }
+        
         guard audioStatus == .authorized else {
             if audioStatus == .notDetermined {
                 AVCaptureDevice.requestAccess(for: .audio) { granted in
                     DispatchQueue.main.async {
-                        if granted { self.callButtonTapped() } else { showDeniedAlert("麦克风") }
+                        if granted { self.proceedWithCall() } else { showDeniedAlert("麦克风") }
                     }
                 }
             } else {
@@ -273,6 +353,7 @@ class PetDetailViewController: UIViewController {
             }
             return
         }
+        
         // 2. 权限通过，弹出视频通话页面
         let vc = VideoCallViewController(petData: petData)
         vc.modalPresentationStyle = .fullScreen

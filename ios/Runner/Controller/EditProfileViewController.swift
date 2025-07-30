@@ -1,327 +1,333 @@
 import UIKit
 import Photos
 import AVFoundation
-// UserProfile相关内容已移至UserProfile+Cache.swift
 
-class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class EditProfileViewController: UIViewController {
+    
+    // MARK: - UI Components
     private var avatarImageView: UIImageView!
-    private var addPhotoButton: UIButton!
-    private var nameTextField: UITextField!
+    private var nicknameTextField: UITextField!
     private var saveButton: UIButton!
-    private var avatarImage: UIImage?
-    private var nickname: String = ""
-    private var canSave: Bool { avatarImage != nil && !(nameTextField.text?.isEmpty ?? true) }
-
+    private var scrollView: UIScrollView!
+    private var contentView: UIView!
+    
+    // MARK: - Properties
+    private var selectedImage: UIImage?
+    private var originalUserInfo: UserManager.UserInfo
+    
+    // MARK: - Lifecycle
+    init() {
+        self.originalUserInfo = UserManager.shared.userInfo
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        setupTopBar()
-        setupAvatarSection()
-        setupNameSection()
-        setupSaveButton()
-        updateSaveButtonState()
+        setupGradientBackground()
+        setupNavigationBar()
+        setupUI()
+        configureWithUserInfo()
     }
-
-    private func setupTopBar() {
-        let topBar = UIView()
-        topBar.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(topBar)
-        NSLayoutConstraint.activate([
-            topBar.topAnchor.constraint(equalTo: view.topAnchor),
-            topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            topBar.heightAnchor.constraint(equalToConstant: 44 + UIApplication.statusBarHeight)
-        ])
-        // 返回按钮
-        let backBtn = UIButton(type: .custom)
-        backBtn.setImage(UIImage(named: "back_black"), for: .normal)
-        backBtn.translatesAutoresizingMaskIntoConstraints = false
-        backBtn.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-        topBar.addSubview(backBtn)
-        NSLayoutConstraint.activate([
-            backBtn.leadingAnchor.constraint(equalTo: topBar.leadingAnchor, constant: 8),
-            backBtn.topAnchor.constraint(equalTo: topBar.topAnchor, constant: UIApplication.statusBarHeight + 6),
-            backBtn.widthAnchor.constraint(equalToConstant: 32),
-            backBtn.heightAnchor.constraint(equalToConstant: 32)
-        ])
-        // 标题
-        let titleLab = UILabel()
-        titleLab.text = "编辑"
-        titleLab.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        titleLab.textColor = UIColor(hex: "#111111")
-        titleLab.textAlignment = .center
-        titleLab.translatesAutoresizingMaskIntoConstraints = false
-        topBar.addSubview(titleLab)
-        NSLayoutConstraint.activate([
-            titleLab.centerXAnchor.constraint(equalTo: topBar.centerXAnchor),
-            titleLab.centerYAnchor.constraint(equalTo: backBtn.centerYAnchor)
-        ])
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
-
-    private func setupAvatarSection() {
-        let avatarTitle = UILabel()
-        avatarTitle.text = "头像"
-        avatarTitle.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        avatarTitle.textColor = UIColor(hex: "#111111")
-        avatarTitle.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(avatarTitle)
-        NSLayoutConstraint.activate([
-            avatarTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
-            avatarTitle.topAnchor.constraint(equalTo: view.topAnchor, constant: 44 + UIApplication.statusBarHeight + 32)
-        ])
-        avatarImageView = UIImageView()
-        avatarImageView.backgroundColor = UIColor.systemGray5
-        avatarImageView.layer.cornerRadius = 12
-        avatarImageView.clipsToBounds = true
-        avatarImageView.contentMode = .scaleAspectFill
-        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(avatarImageView)
-        NSLayoutConstraint.activate([
-            avatarImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            avatarImageView.topAnchor.constraint(equalTo: avatarTitle.topAnchor),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 98),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 98)
-        ])
-        addPhotoButton = UIButton(type: .custom)
-        addPhotoButton.setBackgroundImage(UIImage(named: "btn_edit_photo"), for: .normal)
-        addPhotoButton.translatesAutoresizingMaskIntoConstraints = false
-        addPhotoButton.addTarget(self, action: #selector(addPhotoTapped), for: .touchUpInside)
-        view.addSubview(addPhotoButton)
-        NSLayoutConstraint.activate([
-            addPhotoButton.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor),
-            addPhotoButton.centerYAnchor.constraint(equalTo: avatarImageView.centerYAnchor),
-            addPhotoButton.widthAnchor.constraint(equalToConstant: 98),
-            addPhotoButton.heightAnchor.constraint(equalToConstant: 98)
-        ])
+    
+    // MARK: - Setup Methods
+    private func setupGradientBackground() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [
+            UIColor(hex: "#FFFBF4").cgColor,
+            UIColor(hex: "#FCF8FF").cgColor
+        ]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
-
-    private func setupNameSection() {
-        let nameTitle = UILabel()
-        nameTitle.text = "昵称"
-        nameTitle.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        nameTitle.textColor = UIColor(hex: "#111111")
-        nameTitle.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(nameTitle)
-        NSLayoutConstraint.activate([
-            nameTitle.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
-            nameTitle.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 32)
-        ])
-        let nameBg = UIView()
-        nameBg.backgroundColor = UIColor(hex: "#F5F5F5")
-        nameBg.layer.cornerRadius = 8
-        nameBg.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(nameBg)
-        NSLayoutConstraint.activate([
-            nameBg.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
-            nameBg.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
-            nameBg.topAnchor.constraint(equalTo: nameTitle.bottomAnchor, constant: 8),
-            nameBg.heightAnchor.constraint(equalToConstant: 48)
-        ])
-        nameTextField = UITextField()
-        nameTextField.placeholder = "请输入"
-        nameTextField.font = UIFont.systemFont(ofSize: 15)
-        nameTextField.textColor = UIColor(hex: "#111111")
-        nameTextField.delegate = self
-        nameTextField.clearButtonMode = .whileEditing
-        nameTextField.returnKeyType = .done
-        nameTextField.translatesAutoresizingMaskIntoConstraints = false
-        nameTextField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
-        nameBg.addSubview(nameTextField)
-        NSLayoutConstraint.activate([
-            nameTextField.leadingAnchor.constraint(equalTo: nameBg.leadingAnchor, constant: 12),
-            nameTextField.trailingAnchor.constraint(equalTo: nameBg.trailingAnchor, constant: -48),
-            nameTextField.centerYAnchor.constraint(equalTo: nameBg.centerYAnchor),
-            nameTextField.heightAnchor.constraint(equalTo: nameBg.heightAnchor)
-        ])
-        let countLabel = UILabel()
-        countLabel.text = "0/10"
-        countLabel.font = UIFont.systemFont(ofSize: 13)
-        countLabel.textColor = UIColor(hex: "#999999")
-        countLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameBg.addSubview(countLabel)
-        NSLayoutConstraint.activate([
-            countLabel.trailingAnchor.constraint(equalTo: nameBg.trailingAnchor, constant: -12),
-            countLabel.centerYAnchor.constraint(equalTo: nameBg.centerYAnchor)
-        ])
-        // 限制10字
-        func updateCount() {
-            let count = nameTextField.text?.count ?? 0
-            countLabel.text = "\(count)/10"
-        }
-        updateCount()
-        // iOS13兼容：用addTarget和textFieldChanged里直接调用updateCount
-        self.updateCount = updateCount
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.tintColor = UIColor(hex: "#111111")
+        
+        title = "编辑资料"
+        
+        navigationItem.hidesBackButton = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "back_black"), style: .plain, target: self, action: #selector(backTapped))
     }
-
-    private var updateCount: (() -> Void)?
-
-    private func setupSaveButton() {
-        saveButton = UIButton(type: .custom)
-        saveButton.setTitle("保存", for: .normal)
-        saveButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        saveButton.setTitleColor(.white, for: .normal)
-        saveButton.backgroundColor = UIColor(hex: "#F3AF4B")
-        saveButton.layer.cornerRadius = 26
-        saveButton.translatesAutoresizingMaskIntoConstraints = false
-        saveButton.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
-        view.addSubview(saveButton)
-        NSLayoutConstraint.activate([
-            saveButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
-            saveButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            saveButton.widthAnchor.constraint(equalToConstant: 279),
-            saveButton.heightAnchor.constraint(equalToConstant: 52)
-        ])
-    }
-
-    private func updateSaveButtonState() {
-        let enabled = canSave
-        saveButton.isEnabled = enabled
-        saveButton.alpha = enabled ? 1.0 : 0.6
-    }
-
+    
     @objc private func backTapped() {
         navigationController?.popViewController(animated: true)
     }
-
-    @objc private func addPhotoTapped() {
-        let sheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        sheet.addAction(UIAlertAction(title: "拍照", style: .default) { _ in self.checkCamera() })
-        sheet.addAction(UIAlertAction(title: "相册选择", style: .default) { _ in self.checkPhotoLibrary() })
-        sheet.addAction(UIAlertAction(title: "取消", style: .cancel))
-        present(sheet, animated: true)
+    
+    private func setupUI() {
+        scrollView = UIScrollView()
+        scrollView.backgroundColor = .clear
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scrollView)
+        
+        contentView = UIView()
+        contentView.backgroundColor = .white
+        contentView.layer.cornerRadius = 16
+        contentView.layer.shadowColor = UIColor.black.cgColor
+        contentView.layer.shadowOpacity = 0.1
+        contentView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        contentView.layer.shadowRadius = 8
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(contentView)
+        
+        // 头像区域
+        let avatarContainer = UIView()
+        avatarContainer.backgroundColor = UIColor(hex: "#F8F9FA")
+        avatarContainer.layer.cornerRadius = 12
+        avatarContainer.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(avatarContainer)
+        
+        avatarImageView = UIImageView()
+        avatarImageView.contentMode = .scaleAspectFill
+        avatarImageView.clipsToBounds = true
+        avatarImageView.layer.cornerRadius = 40
+        avatarImageView.backgroundColor = UIColor(hex: "#E9ECEF")
+        avatarImageView.translatesAutoresizingMaskIntoConstraints = false
+        avatarContainer.addSubview(avatarImageView)
+        
+        let avatarLabel = UILabel()
+        avatarLabel.text = "点击更换头像"
+        avatarLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        avatarLabel.textColor = UIColor(hex: "#6C757D")
+        avatarLabel.textAlignment = .center
+        avatarLabel.translatesAutoresizingMaskIntoConstraints = false
+        avatarContainer.addSubview(avatarLabel)
+        
+        let avatarTapGesture = UITapGestureRecognizer(target: self, action: #selector(avatarTapped))
+        avatarContainer.addGestureRecognizer(avatarTapGesture)
+        
+        // 昵称区域
+        let nicknameContainer = UIView()
+        nicknameContainer.backgroundColor = UIColor(hex: "#F8F9FA")
+        nicknameContainer.layer.cornerRadius = 12
+        nicknameContainer.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(nicknameContainer)
+        
+        let nicknameLabel = UILabel()
+        nicknameLabel.text = "昵称"
+        nicknameLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        nicknameLabel.textColor = UIColor(hex: "#111111")
+        nicknameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nicknameContainer.addSubview(nicknameLabel)
+        
+        nicknameTextField = UITextField()
+        nicknameTextField.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        nicknameTextField.textColor = UIColor(hex: "#111111")
+        nicknameTextField.placeholder = "请输入昵称"
+        nicknameTextField.borderStyle = .none
+        nicknameTextField.backgroundColor = .clear
+        nicknameTextField.translatesAutoresizingMaskIntoConstraints = false
+        nicknameContainer.addSubview(nicknameTextField)
+        
+        // 保存按钮
+        saveButton = UIButton(type: .system)
+        saveButton.setTitle("保存", for: .normal)
+        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        saveButton.backgroundColor = UIColor(hex: "#007AFF")
+        saveButton.layer.cornerRadius = 12
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        contentView.addSubview(saveButton)
+        
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 20),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -20),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -20),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: -40),
+            
+            avatarContainer.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            avatarContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            avatarContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            avatarContainer.heightAnchor.constraint(equalToConstant: 120),
+            
+            avatarImageView.centerXAnchor.constraint(equalTo: avatarContainer.centerXAnchor),
+            avatarImageView.topAnchor.constraint(equalTo: avatarContainer.topAnchor, constant: 20),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 80),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 80),
+            
+            avatarLabel.centerXAnchor.constraint(equalTo: avatarContainer.centerXAnchor),
+            avatarLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 8),
+            
+            nicknameContainer.topAnchor.constraint(equalTo: avatarContainer.bottomAnchor, constant: 20),
+            nicknameContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            nicknameContainer.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            nicknameContainer.heightAnchor.constraint(equalToConstant: 60),
+            
+            nicknameLabel.leadingAnchor.constraint(equalTo: nicknameContainer.leadingAnchor, constant: 15),
+            nicknameLabel.centerYAnchor.constraint(equalTo: nicknameContainer.centerYAnchor),
+            nicknameLabel.widthAnchor.constraint(equalToConstant: 60),
+            
+            nicknameTextField.leadingAnchor.constraint(equalTo: nicknameLabel.trailingAnchor, constant: 15),
+            nicknameTextField.trailingAnchor.constraint(equalTo: nicknameContainer.trailingAnchor, constant: -15),
+            nicknameTextField.centerYAnchor.constraint(equalTo: nicknameContainer.centerYAnchor),
+            
+            saveButton.topAnchor.constraint(equalTo: nicknameContainer.bottomAnchor, constant: 30),
+            saveButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            saveButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            saveButton.heightAnchor.constraint(equalToConstant: 50),
+            saveButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
+        ])
     }
-
-    private func checkCamera() {
-        let status = AVCaptureDevice.authorizationStatus(for: .video)
-        switch status {
-        case .authorized:
-            openCamera()
-        case .notDetermined:
-            AVCaptureDevice.requestAccess(for: .video) { granted in
-                DispatchQueue.main.async {
-                    if granted { self.openCamera() } else { self.showCameraDeniedAlert() }
-                }
-            }
-        default:
-            showCameraDeniedAlert()
-        }
-    }
-    private func showCameraDeniedAlert() {
-        let alert = UIAlertController(title: "无法访问相机", message: "请在设置中打开相机权限", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "去设置", style: .default) { _ in
-            if let url = URL(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.open(url)
-            }
-        })
-        alert.addAction(UIAlertAction(title: "取消", style: .cancel))
-        present(alert, animated: true)
-    }
-    private func openCamera() {
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) else { return }
-        let picker = UIImagePickerController()
-        picker.sourceType = .camera
-        picker.delegate = self
-        present(picker, animated: true)
-    }
-    private func checkPhotoLibrary() {
-        if #available(iOS 14, *) {
-            let status = PHPhotoLibrary.authorizationStatus(for: .readWrite)
-            switch status {
-            case .authorized, .limited:
-                openPhotoLibrary()
-            case .notDetermined:
-                PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
-                    DispatchQueue.main.async {
-                        if status == .authorized || status == .limited {
-                            self.openPhotoLibrary()
-                        } else {
-                            self.showPhotoDeniedAlert()
-                        }
-                    }
-                }
-            default:
-                showPhotoDeniedAlert()
-            }
+    
+    private func configureWithUserInfo() {
+        let userInfo = UserManager.shared.userInfo
+        
+        // 设置头像
+        if let image = UIImage(named: userInfo.avatar) {
+            avatarImageView.image = image
         } else {
-            let status = PHPhotoLibrary.authorizationStatus()
-            switch status {
-            case .authorized:
-                openPhotoLibrary()
-            case .notDetermined:
-                PHPhotoLibrary.requestAuthorization { status in
-                    DispatchQueue.main.async {
-                        if status == .authorized {
-                            self.openPhotoLibrary()
-                        } else {
-                            self.showPhotoDeniedAlert()
-                        }
-                    }
-                }
-            default:
-                showPhotoDeniedAlert()
-            }
+            avatarImageView.image = UIImage(named: "icon_head")
         }
+        
+        // 设置昵称
+        nicknameTextField.text = userInfo.nickname
     }
-    private func showPhotoDeniedAlert() {
-        let alert = UIAlertController(title: "无法访问相册", message: "请在设置中打开相册权限", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "去设置", style: .default) { _ in
-            if let url = URL(string: UIApplication.openSettingsURLString) {
-                UIApplication.shared.open(url)
-            }
+    
+    // MARK: - Actions
+    @objc private func avatarTapped() {
+        let alert = UIAlertController(title: "选择头像", message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "从相册选择", style: .default) { _ in
+            self.requestPhotoLibraryAccess()
         })
+        
+        alert.addAction(UIAlertAction(title: "拍照", style: .default) { _ in
+            self.requestCameraAccess()
+        })
+        
         alert.addAction(UIAlertAction(title: "取消", style: .cancel))
+        
         present(alert, animated: true)
     }
-    private func openPhotoLibrary() {
-        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
-        let picker = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.delegate = self
-        present(picker, animated: true)
-    }
-    // MARK: - UIImagePickerControllerDelegate
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true)
-        if let img = info[.originalImage] as? UIImage {
-            avatarImage = img
-            avatarImageView.image = img
-            addPhotoButton.isHidden = true
-            updateSaveButtonState()
-        }
-    }
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true)
-    }
-    // MARK: - UITextFieldDelegate
-    @objc private func textFieldChanged() {
-        // 只在没有高亮（联想/拼音未上屏）时做截断
-        if let textField = nameTextField,
-           let text = textField.text,
-           let markedRange = textField.markedTextRange,
-           let _ = textField.position(from: markedRange.start, offset: 0) {
-            // 有高亮，不截断
-            updateCount?()
-            updateSaveButtonState()
+    
+    @objc private func saveButtonTapped() {
+        guard let nickname = nicknameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !nickname.isEmpty else {
+            showAlert(title: "提示", message: "请输入昵称")
             return
         }
-        if let text = nameTextField.text, text.count > 10 {
-            nameTextField.text = String(text.prefix(10))
+        
+        // 保存用户信息
+        UserManager.shared.updateUserInfo(
+            avatar: selectedImage != nil ? "custom_avatar" : originalUserInfo.avatar,
+            nickname: nickname
+        )
+        
+        // 如果有自定义头像，保存到本地
+        if let selectedImage = selectedImage {
+            saveCustomAvatar(selectedImage)
         }
-        updateCount?()
-        updateSaveButtonState()
+        
+        showAlert(title: "成功", message: "资料保存成功") { _ in
+            self.navigationController?.popViewController(animated: true)
+        }
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
+    
+    // MARK: - Photo Methods
+    private func requestPhotoLibraryAccess() {
+        let status = PHPhotoLibrary.authorizationStatus()
+        
+        switch status {
+        case .authorized, .limited:
+            presentImagePicker(sourceType: .photoLibrary)
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { [weak self] status in
+                DispatchQueue.main.async {
+                    if #available(iOS 14, *) {
+                        if status == .authorized || status == .limited {
+                            self?.presentImagePicker(sourceType: .photoLibrary)
+                        } else {
+                            self?.showAlert(title: "提示", message: "需要相册权限才能选择头像")
+                        }
+                    } else {
+                        // Fallback on earlier versions
+                    }
+                }
+            }
+        case .denied, .restricted:
+            showAlert(title: "提示", message: "请在设置中允许访问相册")
+        @unknown default:
+            break
+        }
     }
-    // MARK: - 保存
-    @objc private func saveTapped() {
-        // 保存逻辑，头像和昵称都填写后才可用
-        guard let img = avatarImage, let imgData = img.jpegData(compressionQuality: 0.8),
-              let name = nameTextField.text, !name.isEmpty else { return }
-        let profile = UserProfile(nickname: name, avatarData: imgData)
-        UserDefaults.standard.userProfile = profile
-        NotificationCenter.default.post(name: .userProfileDidChange, object: nil)
-        navigationController?.popViewController(animated: true)
+    
+    private func requestCameraAccess() {
+        let status = AVCaptureDevice.authorizationStatus(for: .video)
+        
+        switch status {
+        case .authorized:
+            presentImagePicker(sourceType: .camera)
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
+                DispatchQueue.main.async {
+                    if granted {
+                        self?.presentImagePicker(sourceType: .camera)
+                    } else {
+                        self?.showAlert(title: "提示", message: "需要相机权限才能拍照")
+                    }
+                }
+            }
+        case .denied, .restricted:
+            showAlert(title: "提示", message: "请在设置中允许访问相机")
+        @unknown default:
+            break
+        }
+    }
+    
+    private func presentImagePicker(sourceType: UIImagePickerController.SourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = sourceType
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true)
+    }
+    
+    private func saveCustomAvatar(_ image: UIImage) {
+        // 这里可以保存自定义头像到本地文件系统
+        // 简化处理，实际项目中可能需要更复杂的文件管理
+        print("保存自定义头像")
+    }
+    
+    private func showAlert(title: String, message: String, completion: ((UIAlertAction) -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "确定", style: .default, handler: completion))
+        present(alert, animated: true)
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate
+extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let editedImage = info[.editedImage] as? UIImage {
+            selectedImage = editedImage
+            avatarImageView.image = editedImage
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            selectedImage = originalImage
+            avatarImageView.image = originalImage
+        }
+        
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
     }
 } 

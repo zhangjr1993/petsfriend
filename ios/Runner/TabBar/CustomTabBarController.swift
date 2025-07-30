@@ -34,11 +34,11 @@ class CustomTabBarController: UITabBarController {
         let homeVC = HomeViewController()
         let homeNav = CustomNavigationController(rootViewController: homeVC)
         
-        let chatListVC = ChatListViewController()
-        let chatNav = CustomNavigationController(rootViewController: chatListVC)
+        let welfareVC = PublicWelfareViewController()
+        let welfareNav = CustomNavigationController(rootViewController: welfareVC)
         
-        let addVC = AddViewController()
-        let addNav = CustomNavigationController(rootViewController: addVC)
+        let serviceVC = PetServiceViewController()
+        let serviceNav = CustomNavigationController(rootViewController: serviceVC)
         
         let meVC = MeViewController()
         let meNav = CustomNavigationController(rootViewController: meVC)
@@ -50,13 +50,13 @@ class CustomTabBarController: UITabBarController {
             selectedImage: UIImage(named: "btn_tab_home_nor")?.withRenderingMode(.alwaysOriginal)
         )
         
-        chatNav.tabBarItem = UITabBarItem(
+        welfareNav.tabBarItem = UITabBarItem(
             title: "",
             image: UIImage(named: "btn_tab_chat_pre")?.withRenderingMode(.alwaysOriginal),
             selectedImage: UIImage(named: "btn_tab_chat_nor")?.withRenderingMode(.alwaysOriginal)
         )
         
-        addNav.tabBarItem = UITabBarItem(
+        serviceNav.tabBarItem = UITabBarItem(
             title: "",
             image: UIImage(named: "btn_tab_add_pre")?.withRenderingMode(.alwaysOriginal),
             selectedImage: UIImage(named: "btn_tab_add_nor")?.withRenderingMode(.alwaysOriginal)
@@ -69,6 +69,6 @@ class CustomTabBarController: UITabBarController {
         )
         
         // 设置viewControllers
-        viewControllers = [homeNav, chatNav, addNav, meNav]
+        viewControllers = [homeNav, welfareNav, serviceNav, meNav]
     }
 } 

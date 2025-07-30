@@ -19,7 +19,7 @@ extension UIImage {
             return nil
         }
         // 遍历所有子目录
-        let subdirectories = ["afang", "baxi", "nanju", "paopao", "shine", "sunshine", "youmi", "mre", "ganster", "donggua", "daixi", "cpcord"]
+        let subdirectories = ["afang", "baxi", "nanju", "paopao", "shine", "sunshine", "youmi", "mre", "ganster", "donggua", "daixi", "cpcord", "user"]
         for subdirectory in subdirectories {
             if let imagePath = bundle.path(forResource: imgName, ofType: nil, inDirectory: subdirectory) {
                 if imgName.lowercased().hasSuffix(".webp") {

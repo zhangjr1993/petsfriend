@@ -26,10 +26,15 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
     // 新增：footerView属性用于tableView
     private var footerView: UIView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
         setupGradientBackground()
+        setupTopBar()
         setupTableView()
         setupSaveButton()
         updateSaveButtonState() // 初始化按钮状态
@@ -45,7 +50,47 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
         gradientLayer.endPoint = CGPoint(x: 0, y: 1)
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
-    private func setupTableView() {        
+    private func setupTopBar() {
+        let topBar = UIView()
+        topBar.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(topBar)
+        NSLayoutConstraint.activate([
+            topBar.topAnchor.constraint(equalTo: view.topAnchor),
+            topBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            topBar.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topBar.heightAnchor.constraint(equalToConstant: 44 + UIApplication.statusBarHeight)
+        ])
+        // 返回按钮
+        let backBtn = UIButton(type: .custom)
+        backBtn.setImage(UIImage(named: "back_black"), for: .normal)
+        backBtn.translatesAutoresizingMaskIntoConstraints = false
+        backBtn.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        topBar.addSubview(backBtn)
+        NSLayoutConstraint.activate([
+            backBtn.leadingAnchor.constraint(equalTo: topBar.leadingAnchor, constant: 8),
+            backBtn.topAnchor.constraint(equalTo: topBar.topAnchor, constant: UIApplication.statusBarHeight + 6),
+            backBtn.widthAnchor.constraint(equalToConstant: 32),
+            backBtn.heightAnchor.constraint(equalToConstant: 32)
+        ])
+        // 标题
+        let titleLab = UILabel()
+        titleLab.text = "发布宠物相册"
+        titleLab.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        titleLab.textColor = UIColor(hex: "#111111")
+        titleLab.textAlignment = .center
+        titleLab.translatesAutoresizingMaskIntoConstraints = false
+        topBar.addSubview(titleLab)
+        NSLayoutConstraint.activate([
+            titleLab.centerXAnchor.constraint(equalTo: topBar.centerXAnchor),
+            titleLab.centerYAnchor.constraint(equalTo: backBtn.centerYAnchor)
+        ])
+    }
+    
+    @objc private func backTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    private func setupTableView() {
         tableView = UITableView(frame: .zero, style: .grouped)
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
@@ -59,7 +104,7 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
         tableView.tableFooterView = footerView
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 44 + UIApplication.statusBarHeight),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -370,25 +415,7 @@ class AddViewController: UIViewController, UITableViewDataSource, UITableViewDel
             sender.text = String(text.prefix(10))
         }
     }
-    
-    #if DEBUG
-    // 测试API连接
-    @objc private func testAPITapped() {
-        let hud = HUDView()
-        hud.show(in: view)
-        hud.updateMessage("测试API连接...")
-        
-        ZhipuAIService.shared.checkContent(name: "测试", age: "1岁", description: "这是一只可爱的小狗") { [weak self] isPassed, errorMessage in
-            DispatchQueue.main.async {
-                hud.hide()
-                
-                let alert = UIAlertController(title: "API测试结果", message: isPassed ? "API连接成功" : "API连接失败: \(errorMessage ?? "未知错误")", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "确定", style: .default))
-                self?.present(alert, animated: true)
-            }
-        }
-    }
-    #endif
+   
 }
 
 // MARK: - PetNameCell

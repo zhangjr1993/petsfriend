@@ -13,6 +13,7 @@ struct ChatMessageRecord {
 
 class ChatMessageDBManager {
     static let shared = ChatMessageDBManager()
+    
     let db: Connection
     let messages: Table
     let msgId: SQLite.Expression<String>

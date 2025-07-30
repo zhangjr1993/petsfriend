@@ -8,38 +8,36 @@ class MeViewController: UIViewController, MyPetCollectionCellDelegate {
     private var tableView: UITableView!
     private var pets: [PetProfile] = []
     private let functionItems: [(icon: String, title: String)] = [
+        ("icon_me_vip", "会员中心"),
+        ("icon_me_msg", "消息"),
         ("icon_me_ment", "用户协议"),
         ("icon_me_ment", "隐私协议"),
         ("icon_me_block", "拉黑列表"),
-        ("icon_me_about", "关于")
+        ("icon_me_about", "关于"),
     ]
     private let avatarSize: CGFloat = 98
     private let avatarTop: CGFloat = 28
-    private let nickname = "月亮姐姐"
-    private var userProfile: UserProfile? {
-        return UserDefaults.standard.userProfile
+    private var userInfo: UserManager.UserInfo {
+        return UserManager.shared.userInfo
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         loadPets()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: false)
         setupGradientBackground()
         setupTableView()
         setupEditButton()
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshUserProfile), name: .userProfileDidChange, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshPets), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    @objc private func refreshUserProfile() {
-        tableView.reloadData()
-    }
+
     @objc private func refreshPets() {
         loadPets()
         tableView.reloadData()
@@ -142,14 +140,14 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
             avatar.layer.cornerRadius = 12
             avatar.clipsToBounds = true
             avatar.contentMode = .scaleAspectFill
-            if let data = userProfile?.avatarData, let img = UIImage(data: data) {
-                avatar.image = img
+            if let image = UIImage(named: userInfo.avatar) {
+                avatar.image = image
             } else {
                 avatar.image = UIImage(named: "icon_head")
             }
             avatar.translatesAutoresizingMaskIntoConstraints = false
             let nameLab = UILabel()
-            nameLab.text = userProfile?.nickname ?? nickname
+            nameLab.text = userInfo.nickname
             nameLab.font = UIFont.systemFont(ofSize: 18, weight: .medium)
             nameLab.textColor = .defaultTextColor
             nameLab.textAlignment = .center
@@ -184,20 +182,28 @@ extension MeViewController: UITableViewDataSource, UITableViewDelegate {
         // 可根据indexPath跳转协议或关于页面
         
         if indexPath.section == 2 {
-            if indexPath.row == 0 {
+            switch indexPath.row {
+            case 1:
+                let vc = ChatListViewController()
+                navigationController?.pushViewController(vc, animated: true)
+            case 2:
                 let vc = UserAgreementViewController()
                 navigationController?.pushViewController(vc, animated: true)
-            }else if indexPath.row == 1 {
+            case 3:
                 let vc = PrivacyAgreementViewController()
                 navigationController?.pushViewController(vc, animated: true)
-            }else if indexPath.row == 2 {
-                // 拉黑列表
+            case 4:
                 let vc = BlockedListViewController()
                 navigationController?.pushViewController(vc, animated: true)
-            }else {
-                // 关于
+            case 5:
                 let vc = AboutViewController()
                 navigationController?.pushViewController(vc, animated: true)
+            case 0:
+                // 会员中心
+                let vc = VIPCenterViewController()
+                navigationController?.pushViewController(vc, animated: true)
+            default:
+                break
             }
         }
     }

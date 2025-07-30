@@ -116,12 +116,13 @@ class HomeViewController: UIViewController {
         userAvatar.image = UIImage(named: "icon_head")
         userAvatar.translatesAutoresizingMaskIntoConstraints = false
         
-        if let data = UserDefaults.standard.userProfile?.avatarData, let img = UIImage(data: data) {
-            userAvatar.image = img
+        let userInfo = UserManager.shared.userInfo
+        if let image = UIImage(named: userInfo.avatar) {
+            userAvatar.image = image
         }
         // 用户昵称
         let userNickname = UILabel()
-        userNickname.text = UserDefaults.standard.userProfile?.nickname ?? "Hello 月亮姐姐"
+        userNickname.text = "Hello \(userInfo.nickname)"
         userNickname.font = UIFont.systemFont(ofSize: 16, weight: .medium)
         userNickname.textColor = .defaultTextColor
         userNickname.translatesAutoresizingMaskIntoConstraints = false

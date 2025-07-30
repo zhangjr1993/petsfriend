@@ -9,46 +9,63 @@
 /* Begin PBXBuildFile section */
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		8747A27A59D123AF511C9C4E /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDDE4588F41511EE395E725C /* Pods_Runner.framework */; };
-		AE6953112E31D29C009D5DDF /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952DC2E31D29C009D5DDF /* AppConst.swift */; };
-		AE6953122E31D29C009D5DDF /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952DD2E31D29C009D5DDF /* UIApplication+Extension.swift */; };
-		AE6953132E31D29C009D5DDF /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952DE2E31D29C009D5DDF /* UIColor+Extension.swift */; };
-		AE6953142E31D29C009D5DDF /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952DF2E31D29C009D5DDF /* UIImage+Extension.swift */; };
-		AE6953152E31D29C009D5DDF /* UserProfile+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E02E31D29C009D5DDF /* UserProfile+Cache.swift */; };
-		AE6953162E31D29C009D5DDF /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E22E31D29C009D5DDF /* AboutViewController.swift */; };
-		AE6953172E31D29C009D5DDF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E32E31D29C009D5DDF /* AddViewController.swift */; };
-		AE6953182E31D29C009D5DDF /* BlockedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E42E31D29C009D5DDF /* BlockedListViewController.swift */; };
-		AE6953192E31D29C009D5DDF /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E52E31D29C009D5DDF /* ChatListViewController.swift */; };
-		AE69531A2E31D29C009D5DDF /* ChatMessageDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E62E31D29C009D5DDF /* ChatMessageDBManager.swift */; };
-		AE69531B2E31D29C009D5DDF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E72E31D29C009D5DDF /* ChatViewController.swift */; };
-		AE69531C2E31D29C009D5DDF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E82E31D29C009D5DDF /* EditProfileViewController.swift */; };
-		AE69531D2E31D29C009D5DDF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952E92E31D29C009D5DDF /* HomeViewController.swift */; };
-		AE69531E2E31D29C009D5DDF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952EA2E31D29C009D5DDF /* LoginViewController.swift */; };
-		AE69531F2E31D29C009D5DDF /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952EB2E31D29C009D5DDF /* MeViewController.swift */; };
-		AE6953202E31D29C009D5DDF /* PetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952EC2E31D29C009D5DDF /* PetDetailViewController.swift */; };
-		AE6953212E31D29C009D5DDF /* PhotoPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952ED2E31D29C009D5DDF /* PhotoPreviewController.swift */; };
-		AE6953222E31D29C009D5DDF /* PrivacyAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952EE2E31D29C009D5DDF /* PrivacyAgreementViewController.swift */; };
-		AE6953232E31D29C009D5DDF /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952EF2E31D29C009D5DDF /* ReportViewController.swift */; };
-		AE6953242E31D29C009D5DDF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F02E31D29C009D5DDF /* SearchViewController.swift */; };
-		AE6953252E31D29C009D5DDF /* UserAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F12E31D29C009D5DDF /* UserAgreementViewController.swift */; };
-		AE6953262E31D29C009D5DDF /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F22E31D29C009D5DDF /* VideoCallViewController.swift */; };
-		AE6953272E31D29C009D5DDF /* AppRunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F42E31D29C009D5DDF /* AppRunManager.swift */; };
-		AE6953282E31D29C009D5DDF /* BlockedUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F62E31D29C009D5DDF /* BlockedUserManager.swift */; };
-		AE6953292E31D29C009D5DDF /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F72E31D29C009D5DDF /* PetProfile.swift */; };
-		AE69532A2E31D29C009D5DDF /* PetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F82E31D29C009D5DDF /* PetsModel.swift */; };
-		AE69532B2E31D29C009D5DDF /* ZhipuAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6952F92E31D29C009D5DDF /* ZhipuAIService.swift */; };
-		AE69532C2E31D29C009D5DDF /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6953002E31D29C009D5DDF /* CustomNavigationController.swift */; };
-		AE69532D2E31D29C009D5DDF /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6953012E31D29C009D5DDF /* CustomTabBarController.swift */; };
-		AE69532E2E31D29C009D5DDF /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6953032E31D29C009D5DDF /* HUDView.swift */; };
-		AE69532F2E31D29C009D5DDF /* PetInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6953042E31D29C009D5DDF /* PetInfoTableViewCell.swift */; };
-		AE6953302E31D29C009D5DDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6953062E31D29C009D5DDF /* AppDelegate.swift */; };
-		AE6953312E31D29C009D5DDF /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6953082E31D29C009D5DDF /* GeneratedPluginRegistrant.m */; };
-		AE6953322E31D29C009D5DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE6952FB2E31D29C009D5DDF /* Assets.xcassets */; };
-		AE6953332E31D29C009D5DDF /* callingVoip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE6952FC2E31D29C009D5DDF /* callingVoip.mp3 */; };
-		AE6953342E31D29C009D5DDF /* Recommend.geojson in Resources */ = {isa = PBXBuildFile; fileRef = AE6952FD2E31D29C009D5DDF /* Recommend.geojson */; };
-		AE6953352E31D29C009D5DDF /* RunnerBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE6952FE2E31D29C009D5DDF /* RunnerBundle.bundle */; };
-		AE6953372E31D29C009D5DDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE69530B2E31D29C009D5DDF /* LaunchScreen.storyboard */; };
-		AE6953382E31D29C009D5DDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE69530D2E31D29C009D5DDF /* Main.storyboard */; };
-		AE6953392E31D29C009D5DDF /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AE69530E2E31D29C009D5DDF /* PrivacyInfo.xcprivacy */; };
+		AE517D112E3A11D8006E336A /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CCA2E3A11D8006E336A /* AppConst.swift */; };
+		AE517D122E3A11D8006E336A /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CCB2E3A11D8006E336A /* UIApplication+Extension.swift */; };
+		AE517D132E3A11D8006E336A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CCC2E3A11D8006E336A /* UIColor+Extension.swift */; };
+		AE517D142E3A11D8006E336A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CCD2E3A11D8006E336A /* UIImage+Extension.swift */; };
+		AE517D152E3A11D8006E336A /* UserProfile+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CCE2E3A11D8006E336A /* UserProfile+Cache.swift */; };
+		AE517D162E3A11D8006E336A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CD02E3A11D8006E336A /* AboutViewController.swift */; };
+		AE517D172E3A11D8006E336A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CD12E3A11D8006E336A /* AddViewController.swift */; };
+		AE517D182E3A11D8006E336A /* AIChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CD22E3A11D8006E336A /* AIChatViewController.swift */; };
+		AE517D192E3A11D8006E336A /* BlockedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CD32E3A11D8006E336A /* BlockedListViewController.swift */; };
+		AE517D1A2E3A11D8006E336A /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CD42E3A11D8006E336A /* ChatListViewController.swift */; };
+		AE517D1B2E3A11D8006E336A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CD52E3A11D8006E336A /* ChatViewController.swift */; };
+		AE517D1C2E3A11D8006E336A /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CD62E3A11D8006E336A /* EditProfileViewController.swift */; };
+		AE517D1D2E3A11D8006E336A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CD72E3A11D8006E336A /* HomeViewController.swift */; };
+		AE517D1E2E3A11D8006E336A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CD82E3A11D8006E336A /* LoginViewController.swift */; };
+		AE517D1F2E3A11D8006E336A /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CD92E3A11D8006E336A /* MeViewController.swift */; };
+		AE517D202E3A11D8006E336A /* PetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CDA2E3A11D8006E336A /* PetDetailViewController.swift */; };
+		AE517D212E3A11D8006E336A /* PetEncyclopediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CDB2E3A11D8006E336A /* PetEncyclopediaViewController.swift */; };
+		AE517D222E3A11D8006E336A /* PetHealthGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CDC2E3A11D8006E336A /* PetHealthGuideViewController.swift */; };
+		AE517D232E3A11D8006E336A /* PetHealthRecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CDD2E3A11D8006E336A /* PetHealthRecordDetailViewController.swift */; };
+		AE517D242E3A11D8006E336A /* PetHealthRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CDE2E3A11D8006E336A /* PetHealthRecordViewController.swift */; };
+		AE517D252E3A11D8006E336A /* PetServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CDF2E3A11D8006E336A /* PetServiceViewController.swift */; };
+		AE517D262E3A11D8006E336A /* PetVoicePrintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CE02E3A11D8006E336A /* PetVoicePrintViewController.swift */; };
+		AE517D272E3A11D8006E336A /* PhotoPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CE12E3A11D8006E336A /* PhotoPreviewController.swift */; };
+		AE517D282E3A11D8006E336A /* PrivacyAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CE22E3A11D8006E336A /* PrivacyAgreementViewController.swift */; };
+		AE517D292E3A11D8006E336A /* PublicWelfareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CE32E3A11D8006E336A /* PublicWelfareViewController.swift */; };
+		AE517D2A2E3A11D8006E336A /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CE42E3A11D8006E336A /* ReportViewController.swift */; };
+		AE517D2B2E3A11D8006E336A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CE52E3A11D8006E336A /* SearchViewController.swift */; };
+		AE517D2C2E3A11D8006E336A /* UserAgreementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CE62E3A11D8006E336A /* UserAgreementViewController.swift */; };
+		AE517D2D2E3A11D8006E336A /* VideoCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CE72E3A11D8006E336A /* VideoCallViewController.swift */; };
+		AE517D2E2E3A11D8006E336A /* VIPCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CE82E3A11D8006E336A /* VIPCenterViewController.swift */; };
+		AE517D2F2E3A11D8006E336A /* WelfareArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CE92E3A11D8006E336A /* WelfareArticleDetailViewController.swift */; };
+		AE517D302E3A11D8006E336A /* WelfareEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CEA2E3A11D8006E336A /* WelfareEducationViewController.swift */; };
+		AE517D312E3A11D8006E336A /* WelfareNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CEB2E3A11D8006E336A /* WelfareNewsViewController.swift */; };
+		AE517D322E3A11D8006E336A /* ChatMessageDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CED2E3A11D8006E336A /* ChatMessageDBManager.swift */; };
+		AE517D332E3A11D8006E336A /* AppRunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CEF2E3A11D8006E336A /* AppRunManager.swift */; };
+		AE517D342E3A11D8006E336A /* BlockedUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CF12E3A11D8006E336A /* BlockedUserManager.swift */; };
+		AE517D352E3A11D8006E336A /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CF22E3A11D8006E336A /* IAPManager.swift */; };
+		AE517D362E3A11D8006E336A /* PetEncyclopedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CF32E3A11D8006E336A /* PetEncyclopedia.swift */; };
+		AE517D372E3A11D8006E336A /* PetHealthRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CF42E3A11D8006E336A /* PetHealthRecord.swift */; };
+		AE517D382E3A11D8006E336A /* PetProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CF52E3A11D8006E336A /* PetProfile.swift */; };
+		AE517D392E3A11D8006E336A /* PetServiceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CF62E3A11D8006E336A /* PetServiceData.swift */; };
+		AE517D3A2E3A11D8006E336A /* PetsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CF72E3A11D8006E336A /* PetsModel.swift */; };
+		AE517D3B2E3A11D8006E336A /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CF82E3A11D8006E336A /* UserManager.swift */; };
+		AE517D3C2E3A11D8006E336A /* ZhipuAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517CF92E3A11D8006E336A /* ZhipuAIService.swift */; };
+		AE517D3D2E3A11D8006E336A /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517D002E3A11D8006E336A /* CustomNavigationController.swift */; };
+		AE517D3E2E3A11D8006E336A /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517D012E3A11D8006E336A /* CustomTabBarController.swift */; };
+		AE517D3F2E3A11D8006E336A /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517D032E3A11D8006E336A /* HUDView.swift */; };
+		AE517D402E3A11D8006E336A /* PetInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517D042E3A11D8006E336A /* PetInfoTableViewCell.swift */; };
+		AE517D412E3A11D8006E336A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE517D062E3A11D8006E336A /* AppDelegate.swift */; };
+		AE517D422E3A11D8006E336A /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = AE517D082E3A11D8006E336A /* GeneratedPluginRegistrant.m */; };
+		AE517D432E3A11D8006E336A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE517CFB2E3A11D8006E336A /* Assets.xcassets */; };
+		AE517D442E3A11D8006E336A /* callingVoip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AE517CFC2E3A11D8006E336A /* callingVoip.mp3 */; };
+		AE517D452E3A11D8006E336A /* Recommend.geojson in Resources */ = {isa = PBXBuildFile; fileRef = AE517CFD2E3A11D8006E336A /* Recommend.geojson */; };
+		AE517D462E3A11D8006E336A /* RunnerBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AE517CFE2E3A11D8006E336A /* RunnerBundle.bundle */; };
+		AE517D482E3A11D8006E336A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE517D0B2E3A11D8006E336A /* LaunchScreen.storyboard */; };
+		AE517D492E3A11D8006E336A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE517D0D2E3A11D8006E336A /* Main.storyboard */; };
+		AE517D4A2E3A11D8006E336A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AE517D0E2E3A11D8006E336A /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -72,49 +89,66 @@
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
 		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F3B54F8F8C677B50BD8DD36 /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
-		AE6952DC2E31D29C009D5DDF /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
-		AE6952DD2E31D29C009D5DDF /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
-		AE6952DE2E31D29C009D5DDF /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		AE6952DF2E31D29C009D5DDF /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		AE6952E02E31D29C009D5DDF /* UserProfile+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfile+Cache.swift"; sourceTree = "<group>"; };
-		AE6952E22E31D29C009D5DDF /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		AE6952E32E31D29C009D5DDF /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		AE6952E42E31D29C009D5DDF /* BlockedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedListViewController.swift; sourceTree = "<group>"; };
-		AE6952E52E31D29C009D5DDF /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
-		AE6952E62E31D29C009D5DDF /* ChatMessageDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDBManager.swift; sourceTree = "<group>"; };
-		AE6952E72E31D29C009D5DDF /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		AE6952E82E31D29C009D5DDF /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		AE6952E92E31D29C009D5DDF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		AE6952EA2E31D29C009D5DDF /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		AE6952EB2E31D29C009D5DDF /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
-		AE6952EC2E31D29C009D5DDF /* PetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewController.swift; sourceTree = "<group>"; };
-		AE6952ED2E31D29C009D5DDF /* PhotoPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewController.swift; sourceTree = "<group>"; };
-		AE6952EE2E31D29C009D5DDF /* PrivacyAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAgreementViewController.swift; sourceTree = "<group>"; };
-		AE6952EF2E31D29C009D5DDF /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
-		AE6952F02E31D29C009D5DDF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		AE6952F12E31D29C009D5DDF /* UserAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementViewController.swift; sourceTree = "<group>"; };
-		AE6952F22E31D29C009D5DDF /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
-		AE6952F42E31D29C009D5DDF /* AppRunManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRunManager.swift; sourceTree = "<group>"; };
-		AE6952F62E31D29C009D5DDF /* BlockedUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserManager.swift; sourceTree = "<group>"; };
-		AE6952F72E31D29C009D5DDF /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
-		AE6952F82E31D29C009D5DDF /* PetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsModel.swift; sourceTree = "<group>"; };
-		AE6952F92E31D29C009D5DDF /* ZhipuAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhipuAIService.swift; sourceTree = "<group>"; };
-		AE6952FB2E31D29C009D5DDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AE6952FC2E31D29C009D5DDF /* callingVoip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = callingVoip.mp3; sourceTree = "<group>"; };
-		AE6952FD2E31D29C009D5DDF /* Recommend.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Recommend.geojson; sourceTree = "<group>"; };
-		AE6952FE2E31D29C009D5DDF /* RunnerBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RunnerBundle.bundle; sourceTree = "<group>"; };
-		AE6953002E31D29C009D5DDF /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
-		AE6953012E31D29C009D5DDF /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		AE6953032E31D29C009D5DDF /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
-		AE6953042E31D29C009D5DDF /* PetInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfoTableViewCell.swift; sourceTree = "<group>"; };
-		AE6953062E31D29C009D5DDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AE6953072E31D29C009D5DDF /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
-		AE6953082E31D29C009D5DDF /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
-		AE6953092E31D29C009D5DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE69530A2E31D29C009D5DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AE69530C2E31D29C009D5DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AE69530E2E31D29C009D5DDF /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		AE69530F2E31D29C009D5DDF /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
+		AE517CCA2E3A11D8006E336A /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
+		AE517CCB2E3A11D8006E336A /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		AE517CCC2E3A11D8006E336A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		AE517CCD2E3A11D8006E336A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		AE517CCE2E3A11D8006E336A /* UserProfile+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserProfile+Cache.swift"; sourceTree = "<group>"; };
+		AE517CD02E3A11D8006E336A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		AE517CD12E3A11D8006E336A /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		AE517CD22E3A11D8006E336A /* AIChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatViewController.swift; sourceTree = "<group>"; };
+		AE517CD32E3A11D8006E336A /* BlockedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedListViewController.swift; sourceTree = "<group>"; };
+		AE517CD42E3A11D8006E336A /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		AE517CD52E3A11D8006E336A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		AE517CD62E3A11D8006E336A /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		AE517CD72E3A11D8006E336A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AE517CD82E3A11D8006E336A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AE517CD92E3A11D8006E336A /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		AE517CDA2E3A11D8006E336A /* PetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDetailViewController.swift; sourceTree = "<group>"; };
+		AE517CDB2E3A11D8006E336A /* PetEncyclopediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEncyclopediaViewController.swift; sourceTree = "<group>"; };
+		AE517CDC2E3A11D8006E336A /* PetHealthGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetHealthGuideViewController.swift; sourceTree = "<group>"; };
+		AE517CDD2E3A11D8006E336A /* PetHealthRecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetHealthRecordDetailViewController.swift; sourceTree = "<group>"; };
+		AE517CDE2E3A11D8006E336A /* PetHealthRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetHealthRecordViewController.swift; sourceTree = "<group>"; };
+		AE517CDF2E3A11D8006E336A /* PetServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetServiceViewController.swift; sourceTree = "<group>"; };
+		AE517CE02E3A11D8006E336A /* PetVoicePrintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetVoicePrintViewController.swift; sourceTree = "<group>"; };
+		AE517CE12E3A11D8006E336A /* PhotoPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewController.swift; sourceTree = "<group>"; };
+		AE517CE22E3A11D8006E336A /* PrivacyAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyAgreementViewController.swift; sourceTree = "<group>"; };
+		AE517CE32E3A11D8006E336A /* PublicWelfareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicWelfareViewController.swift; sourceTree = "<group>"; };
+		AE517CE42E3A11D8006E336A /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		AE517CE52E3A11D8006E336A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AE517CE62E3A11D8006E336A /* UserAgreementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgreementViewController.swift; sourceTree = "<group>"; };
+		AE517CE72E3A11D8006E336A /* VideoCallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCallViewController.swift; sourceTree = "<group>"; };
+		AE517CE82E3A11D8006E336A /* VIPCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPCenterViewController.swift; sourceTree = "<group>"; };
+		AE517CE92E3A11D8006E336A /* WelfareArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareArticleDetailViewController.swift; sourceTree = "<group>"; };
+		AE517CEA2E3A11D8006E336A /* WelfareEducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareEducationViewController.swift; sourceTree = "<group>"; };
+		AE517CEB2E3A11D8006E336A /* WelfareNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareNewsViewController.swift; sourceTree = "<group>"; };
+		AE517CED2E3A11D8006E336A /* ChatMessageDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageDBManager.swift; sourceTree = "<group>"; };
+		AE517CEF2E3A11D8006E336A /* AppRunManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRunManager.swift; sourceTree = "<group>"; };
+		AE517CF12E3A11D8006E336A /* BlockedUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedUserManager.swift; sourceTree = "<group>"; };
+		AE517CF22E3A11D8006E336A /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		AE517CF32E3A11D8006E336A /* PetEncyclopedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetEncyclopedia.swift; sourceTree = "<group>"; };
+		AE517CF42E3A11D8006E336A /* PetHealthRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetHealthRecord.swift; sourceTree = "<group>"; };
+		AE517CF52E3A11D8006E336A /* PetProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfile.swift; sourceTree = "<group>"; };
+		AE517CF62E3A11D8006E336A /* PetServiceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetServiceData.swift; sourceTree = "<group>"; };
+		AE517CF72E3A11D8006E336A /* PetsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetsModel.swift; sourceTree = "<group>"; };
+		AE517CF82E3A11D8006E336A /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		AE517CF92E3A11D8006E336A /* ZhipuAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZhipuAIService.swift; sourceTree = "<group>"; };
+		AE517CFB2E3A11D8006E336A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AE517CFC2E3A11D8006E336A /* callingVoip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = callingVoip.mp3; sourceTree = "<group>"; };
+		AE517CFD2E3A11D8006E336A /* Recommend.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = Recommend.geojson; sourceTree = "<group>"; };
+		AE517CFE2E3A11D8006E336A /* RunnerBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = RunnerBundle.bundle; sourceTree = "<group>"; };
+		AE517D002E3A11D8006E336A /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		AE517D012E3A11D8006E336A /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		AE517D032E3A11D8006E336A /* HUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
+		AE517D042E3A11D8006E336A /* PetInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetInfoTableViewCell.swift; sourceTree = "<group>"; };
+		AE517D062E3A11D8006E336A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AE517D072E3A11D8006E336A /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
+		AE517D082E3A11D8006E336A /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
+		AE517D092E3A11D8006E336A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE517D0A2E3A11D8006E336A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AE517D0C2E3A11D8006E336A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AE517D0E2E3A11D8006E336A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		AE517D0F2E3A11D8006E336A /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB76A96E5D2F5D84B4AF1143 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
 		C476339A5B6E4B4DCF1ED169 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 		CDDE4588F41511EE395E725C /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				9740EEB11CF90186004384FC /* Flutter */,
-				AE6953102E31D29C009D5DDF /* Runner */,
+				AE517D102E3A11D8006E336A /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
 				331C8082294A63A400263BE5 /* RunnerTests */,
 				8E1CE4F49F4F71BBBC9F953E /* Pods */,
@@ -181,108 +215,133 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AE6952E12E31D29C009D5DDF /* Const */ = {
+		AE517CCF2E3A11D8006E336A /* Const */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952DC2E31D29C009D5DDF /* AppConst.swift */,
-				AE6952DD2E31D29C009D5DDF /* UIApplication+Extension.swift */,
-				AE6952DE2E31D29C009D5DDF /* UIColor+Extension.swift */,
-				AE6952DF2E31D29C009D5DDF /* UIImage+Extension.swift */,
-				AE6952E02E31D29C009D5DDF /* UserProfile+Cache.swift */,
+				AE517CCA2E3A11D8006E336A /* AppConst.swift */,
+				AE517CCB2E3A11D8006E336A /* UIApplication+Extension.swift */,
+				AE517CCC2E3A11D8006E336A /* UIColor+Extension.swift */,
+				AE517CCD2E3A11D8006E336A /* UIImage+Extension.swift */,
+				AE517CCE2E3A11D8006E336A /* UserProfile+Cache.swift */,
 			);
 			path = Const;
 			sourceTree = "<group>";
 		};
-		AE6952F32E31D29C009D5DDF /* Controller */ = {
+		AE517CEC2E3A11D8006E336A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952E22E31D29C009D5DDF /* AboutViewController.swift */,
-				AE6952E32E31D29C009D5DDF /* AddViewController.swift */,
-				AE6952E42E31D29C009D5DDF /* BlockedListViewController.swift */,
-				AE6952E52E31D29C009D5DDF /* ChatListViewController.swift */,
-				AE6952E62E31D29C009D5DDF /* ChatMessageDBManager.swift */,
-				AE6952E72E31D29C009D5DDF /* ChatViewController.swift */,
-				AE6952E82E31D29C009D5DDF /* EditProfileViewController.swift */,
-				AE6952E92E31D29C009D5DDF /* HomeViewController.swift */,
-				AE6952EA2E31D29C009D5DDF /* LoginViewController.swift */,
-				AE6952EB2E31D29C009D5DDF /* MeViewController.swift */,
-				AE6952EC2E31D29C009D5DDF /* PetDetailViewController.swift */,
-				AE6952ED2E31D29C009D5DDF /* PhotoPreviewController.swift */,
-				AE6952EE2E31D29C009D5DDF /* PrivacyAgreementViewController.swift */,
-				AE6952EF2E31D29C009D5DDF /* ReportViewController.swift */,
-				AE6952F02E31D29C009D5DDF /* SearchViewController.swift */,
-				AE6952F12E31D29C009D5DDF /* UserAgreementViewController.swift */,
-				AE6952F22E31D29C009D5DDF /* VideoCallViewController.swift */,
+				AE517CD02E3A11D8006E336A /* AboutViewController.swift */,
+				AE517CD12E3A11D8006E336A /* AddViewController.swift */,
+				AE517CD22E3A11D8006E336A /* AIChatViewController.swift */,
+				AE517CD32E3A11D8006E336A /* BlockedListViewController.swift */,
+				AE517CD42E3A11D8006E336A /* ChatListViewController.swift */,
+				AE517CD52E3A11D8006E336A /* ChatViewController.swift */,
+				AE517CD62E3A11D8006E336A /* EditProfileViewController.swift */,
+				AE517CD72E3A11D8006E336A /* HomeViewController.swift */,
+				AE517CD82E3A11D8006E336A /* LoginViewController.swift */,
+				AE517CD92E3A11D8006E336A /* MeViewController.swift */,
+				AE517CDA2E3A11D8006E336A /* PetDetailViewController.swift */,
+				AE517CDB2E3A11D8006E336A /* PetEncyclopediaViewController.swift */,
+				AE517CDC2E3A11D8006E336A /* PetHealthGuideViewController.swift */,
+				AE517CDD2E3A11D8006E336A /* PetHealthRecordDetailViewController.swift */,
+				AE517CDE2E3A11D8006E336A /* PetHealthRecordViewController.swift */,
+				AE517CDF2E3A11D8006E336A /* PetServiceViewController.swift */,
+				AE517CE02E3A11D8006E336A /* PetVoicePrintViewController.swift */,
+				AE517CE12E3A11D8006E336A /* PhotoPreviewController.swift */,
+				AE517CE22E3A11D8006E336A /* PrivacyAgreementViewController.swift */,
+				AE517CE32E3A11D8006E336A /* PublicWelfareViewController.swift */,
+				AE517CE42E3A11D8006E336A /* ReportViewController.swift */,
+				AE517CE52E3A11D8006E336A /* SearchViewController.swift */,
+				AE517CE62E3A11D8006E336A /* UserAgreementViewController.swift */,
+				AE517CE72E3A11D8006E336A /* VideoCallViewController.swift */,
+				AE517CE82E3A11D8006E336A /* VIPCenterViewController.swift */,
+				AE517CE92E3A11D8006E336A /* WelfareArticleDetailViewController.swift */,
+				AE517CEA2E3A11D8006E336A /* WelfareEducationViewController.swift */,
+				AE517CEB2E3A11D8006E336A /* WelfareNewsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		AE6952F52E31D29C009D5DDF /* Gloab */ = {
+		AE517CEE2E3A11D8006E336A /* DBManager */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952F42E31D29C009D5DDF /* AppRunManager.swift */,
+				AE517CED2E3A11D8006E336A /* ChatMessageDBManager.swift */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
+		AE517CF02E3A11D8006E336A /* Gloab */ = {
+			isa = PBXGroup;
+			children = (
+				AE517CEF2E3A11D8006E336A /* AppRunManager.swift */,
 			);
 			path = Gloab;
 			sourceTree = "<group>";
 		};
-		AE6952FA2E31D29C009D5DDF /* Models */ = {
+		AE517CFA2E3A11D8006E336A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952F62E31D29C009D5DDF /* BlockedUserManager.swift */,
-				AE6952F72E31D29C009D5DDF /* PetProfile.swift */,
-				AE6952F82E31D29C009D5DDF /* PetsModel.swift */,
-				AE6952F92E31D29C009D5DDF /* ZhipuAIService.swift */,
+				AE517CF12E3A11D8006E336A /* BlockedUserManager.swift */,
+				AE517CF22E3A11D8006E336A /* IAPManager.swift */,
+				AE517CF32E3A11D8006E336A /* PetEncyclopedia.swift */,
+				AE517CF42E3A11D8006E336A /* PetHealthRecord.swift */,
+				AE517CF52E3A11D8006E336A /* PetProfile.swift */,
+				AE517CF62E3A11D8006E336A /* PetServiceData.swift */,
+				AE517CF72E3A11D8006E336A /* PetsModel.swift */,
+				AE517CF82E3A11D8006E336A /* UserManager.swift */,
+				AE517CF92E3A11D8006E336A /* ZhipuAIService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		AE6952FF2E31D29C009D5DDF /* Resource */ = {
+		AE517CFF2E3A11D8006E336A /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952FB2E31D29C009D5DDF /* Assets.xcassets */,
-				AE6952FC2E31D29C009D5DDF /* callingVoip.mp3 */,
-				AE6952FD2E31D29C009D5DDF /* Recommend.geojson */,
-				AE6952FE2E31D29C009D5DDF /* RunnerBundle.bundle */,
+				AE517CFB2E3A11D8006E336A /* Assets.xcassets */,
+				AE517CFC2E3A11D8006E336A /* callingVoip.mp3 */,
+				AE517CFD2E3A11D8006E336A /* Recommend.geojson */,
+				AE517CFE2E3A11D8006E336A /* RunnerBundle.bundle */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		AE6953022E31D29C009D5DDF /* TabBar */ = {
+		AE517D022E3A11D8006E336A /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				AE6953002E31D29C009D5DDF /* CustomNavigationController.swift */,
-				AE6953012E31D29C009D5DDF /* CustomTabBarController.swift */,
+				AE517D002E3A11D8006E336A /* CustomNavigationController.swift */,
+				AE517D012E3A11D8006E336A /* CustomTabBarController.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		AE6953052E31D29C009D5DDF /* View */ = {
+		AE517D052E3A11D8006E336A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AE6953032E31D29C009D5DDF /* HUDView.swift */,
-				AE6953042E31D29C009D5DDF /* PetInfoTableViewCell.swift */,
+				AE517D032E3A11D8006E336A /* HUDView.swift */,
+				AE517D042E3A11D8006E336A /* PetInfoTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		AE6953102E31D29C009D5DDF /* Runner */ = {
+		AE517D102E3A11D8006E336A /* Runner */ = {
 			isa = PBXGroup;
 			children = (
-				AE6952E12E31D29C009D5DDF /* Const */,
-				AE6952F32E31D29C009D5DDF /* Controller */,
-				AE6952F52E31D29C009D5DDF /* Gloab */,
-				AE6952FA2E31D29C009D5DDF /* Models */,
-				AE6952FF2E31D29C009D5DDF /* Resource */,
-				AE6953022E31D29C009D5DDF /* TabBar */,
-				AE6953052E31D29C009D5DDF /* View */,
-				AE6953062E31D29C009D5DDF /* AppDelegate.swift */,
-				AE6953072E31D29C009D5DDF /* GeneratedPluginRegistrant.h */,
-				AE6953082E31D29C009D5DDF /* GeneratedPluginRegistrant.m */,
-				AE6953092E31D29C009D5DDF /* Info.plist */,
-				AE69530B2E31D29C009D5DDF /* LaunchScreen.storyboard */,
-				AE69530D2E31D29C009D5DDF /* Main.storyboard */,
-				AE69530E2E31D29C009D5DDF /* PrivacyInfo.xcprivacy */,
-				AE69530F2E31D29C009D5DDF /* Runner-Bridging-Header.h */,
+				AE517CCF2E3A11D8006E336A /* Const */,
+				AE517CEC2E3A11D8006E336A /* Controller */,
+				AE517CEE2E3A11D8006E336A /* DBManager */,
+				AE517CF02E3A11D8006E336A /* Gloab */,
+				AE517CFA2E3A11D8006E336A /* Models */,
+				AE517CFF2E3A11D8006E336A /* Resource */,
+				AE517D022E3A11D8006E336A /* TabBar */,
+				AE517D052E3A11D8006E336A /* View */,
+				AE517D062E3A11D8006E336A /* AppDelegate.swift */,
+				AE517D072E3A11D8006E336A /* GeneratedPluginRegistrant.h */,
+				AE517D082E3A11D8006E336A /* GeneratedPluginRegistrant.m */,
+				AE517D092E3A11D8006E336A /* Info.plist */,
+				AE517D0B2E3A11D8006E336A /* LaunchScreen.storyboard */,
+				AE517D0D2E3A11D8006E336A /* Main.storyboard */,
+				AE517D0E2E3A11D8006E336A /* PrivacyInfo.xcprivacy */,
+				AE517D0F2E3A11D8006E336A /* Runner-Bridging-Header.h */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -359,13 +418,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE6953322E31D29C009D5DDF /* Assets.xcassets in Resources */,
-				AE6953332E31D29C009D5DDF /* callingVoip.mp3 in Resources */,
-				AE6953342E31D29C009D5DDF /* Recommend.geojson in Resources */,
-				AE6953352E31D29C009D5DDF /* RunnerBundle.bundle in Resources */,
-				AE6953372E31D29C009D5DDF /* LaunchScreen.storyboard in Resources */,
-				AE6953382E31D29C009D5DDF /* Main.storyboard in Resources */,
-				AE6953392E31D29C009D5DDF /* PrivacyInfo.xcprivacy in Resources */,
+				AE517D432E3A11D8006E336A /* Assets.xcassets in Resources */,
+				AE517D442E3A11D8006E336A /* callingVoip.mp3 in Resources */,
+				AE517D452E3A11D8006E336A /* Recommend.geojson in Resources */,
+				AE517D462E3A11D8006E336A /* RunnerBundle.bundle in Resources */,
+				AE517D482E3A11D8006E336A /* LaunchScreen.storyboard in Resources */,
+				AE517D492E3A11D8006E336A /* Main.storyboard in Resources */,
+				AE517D4A2E3A11D8006E336A /* PrivacyInfo.xcprivacy in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,57 +509,74 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE6953112E31D29C009D5DDF /* AppConst.swift in Sources */,
-				AE6953122E31D29C009D5DDF /* UIApplication+Extension.swift in Sources */,
-				AE6953132E31D29C009D5DDF /* UIColor+Extension.swift in Sources */,
-				AE6953142E31D29C009D5DDF /* UIImage+Extension.swift in Sources */,
-				AE6953152E31D29C009D5DDF /* UserProfile+Cache.swift in Sources */,
-				AE6953162E31D29C009D5DDF /* AboutViewController.swift in Sources */,
-				AE6953172E31D29C009D5DDF /* AddViewController.swift in Sources */,
-				AE6953182E31D29C009D5DDF /* BlockedListViewController.swift in Sources */,
-				AE6953192E31D29C009D5DDF /* ChatListViewController.swift in Sources */,
-				AE69531A2E31D29C009D5DDF /* ChatMessageDBManager.swift in Sources */,
-				AE69531B2E31D29C009D5DDF /* ChatViewController.swift in Sources */,
-				AE69531C2E31D29C009D5DDF /* EditProfileViewController.swift in Sources */,
-				AE69531D2E31D29C009D5DDF /* HomeViewController.swift in Sources */,
-				AE69531E2E31D29C009D5DDF /* LoginViewController.swift in Sources */,
-				AE69531F2E31D29C009D5DDF /* MeViewController.swift in Sources */,
-				AE6953202E31D29C009D5DDF /* PetDetailViewController.swift in Sources */,
-				AE6953212E31D29C009D5DDF /* PhotoPreviewController.swift in Sources */,
-				AE6953222E31D29C009D5DDF /* PrivacyAgreementViewController.swift in Sources */,
-				AE6953232E31D29C009D5DDF /* ReportViewController.swift in Sources */,
-				AE6953242E31D29C009D5DDF /* SearchViewController.swift in Sources */,
-				AE6953252E31D29C009D5DDF /* UserAgreementViewController.swift in Sources */,
-				AE6953262E31D29C009D5DDF /* VideoCallViewController.swift in Sources */,
-				AE6953272E31D29C009D5DDF /* AppRunManager.swift in Sources */,
-				AE6953282E31D29C009D5DDF /* BlockedUserManager.swift in Sources */,
-				AE6953292E31D29C009D5DDF /* PetProfile.swift in Sources */,
-				AE69532A2E31D29C009D5DDF /* PetsModel.swift in Sources */,
-				AE69532B2E31D29C009D5DDF /* ZhipuAIService.swift in Sources */,
-				AE69532C2E31D29C009D5DDF /* CustomNavigationController.swift in Sources */,
-				AE69532D2E31D29C009D5DDF /* CustomTabBarController.swift in Sources */,
-				AE69532E2E31D29C009D5DDF /* HUDView.swift in Sources */,
-				AE69532F2E31D29C009D5DDF /* PetInfoTableViewCell.swift in Sources */,
-				AE6953302E31D29C009D5DDF /* AppDelegate.swift in Sources */,
-				AE6953312E31D29C009D5DDF /* GeneratedPluginRegistrant.m in Sources */,
+				AE517D112E3A11D8006E336A /* AppConst.swift in Sources */,
+				AE517D122E3A11D8006E336A /* UIApplication+Extension.swift in Sources */,
+				AE517D132E3A11D8006E336A /* UIColor+Extension.swift in Sources */,
+				AE517D142E3A11D8006E336A /* UIImage+Extension.swift in Sources */,
+				AE517D152E3A11D8006E336A /* UserProfile+Cache.swift in Sources */,
+				AE517D162E3A11D8006E336A /* AboutViewController.swift in Sources */,
+				AE517D172E3A11D8006E336A /* AddViewController.swift in Sources */,
+				AE517D182E3A11D8006E336A /* AIChatViewController.swift in Sources */,
+				AE517D192E3A11D8006E336A /* BlockedListViewController.swift in Sources */,
+				AE517D1A2E3A11D8006E336A /* ChatListViewController.swift in Sources */,
+				AE517D1B2E3A11D8006E336A /* ChatViewController.swift in Sources */,
+				AE517D1C2E3A11D8006E336A /* EditProfileViewController.swift in Sources */,
+				AE517D1D2E3A11D8006E336A /* HomeViewController.swift in Sources */,
+				AE517D1E2E3A11D8006E336A /* LoginViewController.swift in Sources */,
+				AE517D1F2E3A11D8006E336A /* MeViewController.swift in Sources */,
+				AE517D202E3A11D8006E336A /* PetDetailViewController.swift in Sources */,
+				AE517D212E3A11D8006E336A /* PetEncyclopediaViewController.swift in Sources */,
+				AE517D222E3A11D8006E336A /* PetHealthGuideViewController.swift in Sources */,
+				AE517D232E3A11D8006E336A /* PetHealthRecordDetailViewController.swift in Sources */,
+				AE517D242E3A11D8006E336A /* PetHealthRecordViewController.swift in Sources */,
+				AE517D252E3A11D8006E336A /* PetServiceViewController.swift in Sources */,
+				AE517D262E3A11D8006E336A /* PetVoicePrintViewController.swift in Sources */,
+				AE517D272E3A11D8006E336A /* PhotoPreviewController.swift in Sources */,
+				AE517D282E3A11D8006E336A /* PrivacyAgreementViewController.swift in Sources */,
+				AE517D292E3A11D8006E336A /* PublicWelfareViewController.swift in Sources */,
+				AE517D2A2E3A11D8006E336A /* ReportViewController.swift in Sources */,
+				AE517D2B2E3A11D8006E336A /* SearchViewController.swift in Sources */,
+				AE517D2C2E3A11D8006E336A /* UserAgreementViewController.swift in Sources */,
+				AE517D2D2E3A11D8006E336A /* VideoCallViewController.swift in Sources */,
+				AE517D2E2E3A11D8006E336A /* VIPCenterViewController.swift in Sources */,
+				AE517D2F2E3A11D8006E336A /* WelfareArticleDetailViewController.swift in Sources */,
+				AE517D302E3A11D8006E336A /* WelfareEducationViewController.swift in Sources */,
+				AE517D312E3A11D8006E336A /* WelfareNewsViewController.swift in Sources */,
+				AE517D322E3A11D8006E336A /* ChatMessageDBManager.swift in Sources */,
+				AE517D332E3A11D8006E336A /* AppRunManager.swift in Sources */,
+				AE517D342E3A11D8006E336A /* BlockedUserManager.swift in Sources */,
+				AE517D352E3A11D8006E336A /* IAPManager.swift in Sources */,
+				AE517D362E3A11D8006E336A /* PetEncyclopedia.swift in Sources */,
+				AE517D372E3A11D8006E336A /* PetHealthRecord.swift in Sources */,
+				AE517D382E3A11D8006E336A /* PetProfile.swift in Sources */,
+				AE517D392E3A11D8006E336A /* PetServiceData.swift in Sources */,
+				AE517D3A2E3A11D8006E336A /* PetsModel.swift in Sources */,
+				AE517D3B2E3A11D8006E336A /* UserManager.swift in Sources */,
+				AE517D3C2E3A11D8006E336A /* ZhipuAIService.swift in Sources */,
+				AE517D3D2E3A11D8006E336A /* CustomNavigationController.swift in Sources */,
+				AE517D3E2E3A11D8006E336A /* CustomTabBarController.swift in Sources */,
+				AE517D3F2E3A11D8006E336A /* HUDView.swift in Sources */,
+				AE517D402E3A11D8006E336A /* PetInfoTableViewCell.swift in Sources */,
+				AE517D412E3A11D8006E336A /* AppDelegate.swift in Sources */,
+				AE517D422E3A11D8006E336A /* GeneratedPluginRegistrant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AE69530B2E31D29C009D5DDF /* LaunchScreen.storyboard */ = {
+		AE517D0B2E3A11D8006E336A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AE69530A2E31D29C009D5DDF /* Base */,
+				AE517D0A2E3A11D8006E336A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		AE69530D2E31D29C009D5DDF /* Main.storyboard */ = {
+		AE517D0D2E3A11D8006E336A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				AE69530C2E31D29C009D5DDF /* Base */,
+				AE517D0C2E3A11D8006E336A /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -567,7 +643,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;
@@ -713,7 +789,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;
@@ -750,7 +826,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;

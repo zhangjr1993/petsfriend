@@ -16,7 +16,7 @@ class AboutViewController: UIViewController {
     }
     private func setupUI() {
         let label = UILabel()
-        label.text = "缘会 v1.0\n\n分享萌宠日常，结识同好伙伴。支持私聊交流心得、索要萌宠美图，还能视频通话实时互动。让养宠生活更有趣，快来加入吧！"
+        label.text = "欢伴 v1.0\n\n分享萌宠日常，结识同好伙伴。支持私聊交流心得、索要萌宠美图，还能视频通话实时互动。让养宠生活更有趣，快来加入吧！"
         label.numberOfLines = 0
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18)
