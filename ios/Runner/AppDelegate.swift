@@ -7,8 +7,7 @@ import AppTrackingTransparency
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
-    private var launch: UILabel!
-    
+
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -52,9 +51,6 @@ extension AppDelegate {
     
     private func setupAppData() {
         AppRunManager.shared.initData()
-        
-        launch.textColor = .white
-        window.addSubview(launch)
         
         // 初始化IAPManager
         SKPaymentQueue.default().add(IAPManager.shared)
