@@ -647,8 +647,8 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/tmp/Desktop/petsfriend;
-				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
+				FLUTTER_APPLICATION_PATH = /Users/runner/work/petsfriend/petsfriend;
+				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.32.7-stable/arm64";
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -793,8 +793,8 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/tmp/Desktop/petsfriend;
-				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
+				FLUTTER_APPLICATION_PATH = /Users/runner/work/petsfriend/petsfriend;
+				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.32.7-stable/arm64";
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -830,8 +830,8 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/tmp/Desktop/petsfriend;
-				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
+				FLUTTER_APPLICATION_PATH = /Users/runner/work/petsfriend/petsfriend;
+				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.32.7-stable/arm64";
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
