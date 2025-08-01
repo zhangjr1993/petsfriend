@@ -643,12 +643,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/runner/work/petsfriend/petsfriend;
-				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.32.7-stable/arm64";
+				FLUTTER_APPLICATION_PATH = /Users/tmp/Desktop/petsfriend;
+				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -789,12 +789,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/runner/work/petsfriend/petsfriend;
-				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.32.7-stable/arm64";
+				FLUTTER_APPLICATION_PATH = /Users/tmp/Desktop/petsfriend;
+				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -826,12 +826,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6797V5F242;
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/runner/work/petsfriend/petsfriend;
-				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.32.7-stable/arm64";
+				FLUTTER_APPLICATION_PATH = /Users/tmp/Desktop/petsfriend;
+				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
 				INFOPLIST_FILE = Runner/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
